@@ -1,0 +1,706 @@
+{
+  "users": [
+    {
+      "id": "d26f",
+      "firstName": "Mazen",
+      "lastName": "Eldessouky",
+      "phoneNumber": "01116971882",
+      "password": "123456789",
+      "email": "eldessoukymazen@gmail.com",
+      "past-reservation": [
+        {
+          "id": "1",
+          "time": "8:30pm",
+          "location": "City Center Almaza",
+          "seats": [
+            "2B",
+            "2C"
+          ],
+          "price": "200"
+        },
+        {
+          "id": "2",
+          "time": "8:30pm",
+          "location": "City Center Almaza",
+          "seats": [
+            "1C",
+            "1D",
+            "1E"
+          ],
+          "price": "300"
+        },
+        {
+          "id": "2",
+          "title": "AL SERB",
+          "time": "1:45pm",
+          "location": "City Center Almaza",
+          "seats": [
+            "1C",
+            "1D",
+            "1E"
+          ],
+          "price": "300"
+        },
+        {
+          "id": "2",
+          "title": "AL SERB",
+          "time": "1:45pm",
+          "location": "City Center Almaza",
+          "seats": [
+            "3D",
+            "3E",
+            "3F"
+          ],
+          "price": "300"
+        },
+        {
+          "id": "4",
+          "title": "LAHAZAT LAZEEZA",
+          "time": "4:45pm",
+          "location": "Mall Of Egypt",
+          "seats": [
+            "4D",
+            "4E",
+            "4F",
+            "4G"
+          ],
+          "price": "400"
+        }
+      ]
+    },
+    {
+      "id": "84e8",
+      "firstName": "Marwan",
+      "lastName": "Agamy",
+      "phoneNumber": "01223715457",
+      "password": "123456789",
+      "email": "marwan@hotmail.com",
+      "past-reservation": [
+        {
+          "id": "1",
+          "title": "KINGDOM OF THE PLANET OF THE APES",
+          "time": "4:45pm",
+          "location": "City Center Alexandria",
+          "seats": [
+            "4D",
+            "4E",
+            "4F",
+            "4G"
+          ],
+          "price": "400"
+        },
+        {
+          "id": "9",
+          "title": "LAND OF BAD",
+          "time": "8:30pm",
+          "location": "City Center Alexandria",
+          "seats": [
+            "5B",
+            "5D",
+            "5E",
+            "5G",
+            "5F",
+            "5C"
+          ],
+          "price": "600"
+        },
+        {
+          "id": "3",
+          "title": "SHEQO",
+          "time": "1:45pm",
+          "location": "City Stars",
+          "seats": [
+            "4E"
+          ],
+          "price": "100"
+        },
+        {
+          "id": "12",
+          "title": "CIVIL WAR",
+          "time": "4:45pm",
+          "location": "Mall Of Egypt",
+          "seats": [
+            "5D",
+            "5C"
+          ],
+          "price": "200"
+        },
+        {
+          "id": "7",
+          "title": "KUNG FU PANDA 4",
+          "time": "4:45pm",
+          "location": "City Center Alexandria",
+          "seats": [
+            "4G",
+            "4F"
+          ],
+          "price": "200"
+        }
+      ]
+    },
+    {
+      "id": "81ca",
+      "firstName": "Marwan",
+      "lastName": "Agamy",
+      "phoneNumber": "01223715457",
+      "password": "123456789",
+      "email": "marawan.agamy2010@hotmail.com",
+      "past-reservation": []
+    }
+  ],
+  "movies": [
+    {
+      "id": "1",
+      "title": "KINGDOM OF THE PLANET OF THE APES",
+      "movie_image": "movie-1.jpg",
+      "Genre": "Action",
+      "Running_Time": "145 min",
+      "description": "Many years after the reign of Caesar, a young ape goes on a journey that will lead him to question everything he's been taught about the past and make choices that will define a future for apes and humans alike.",
+      "Release_Date": "08 May 2024",
+      "Starring": "Kevin Durand, Dichen Lachman, Freya Allan, Wes Ball",
+      "Language": "English",
+      "classification": "+12",
+      "Subtitle": "Arabic",
+      "trailer_youtube_link": "https://www.youtube.com/embed/er3h_STlp-k",
+      "rating": "5",
+      "reviews": [
+        {
+          "userID": "1",
+          "body": "adssdadsda"
+        }
+      ],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "AL SERB",
+      "movie_image": "movie-2.jpg",
+      "Genre": "Action",
+      "Running_Time": "100 min",
+      "description": "El Serb is a captivating thriller inspired by real events movie, tracing the journey of a team of Egyptian heroes as they battle terrorist organizations. Following a devastating tragedy, they undertake a mission within enemy territory, encountering resistance. With high-powered combat sequences and impressive production, the film showcases their bravery and determination to protect their homeland and uphold justice.",
+      "Release_Date": "01 May 2024",
+      "Starring": "Mohamed Mamdouh, Ahmed El Sakka, Sherif Mounir, Mostafa Fahmi",
+      "Language": "Arabic",
+      "classification": "G",
+      "Subtitle": "No subtitle",
+      "trailer_youtube_link": "https://www.youtube.com/embed/jg2M4yStW3M",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "SHEQO",
+      "movie_image": "movie-3.jpg",
+      "Genre": "Comedy",
+      "Running_Time": "130 min",
+      "description": "The events of the film revolve around an action comedy about Ismail (Amr Youssef) and Hegazy (Mohamed Mamdouh), who carry out thefts on behalf of Dr. Yousra, but things turn upside down when Ismail falls in love with one of his victims, Fatima (Dina El-Sherbiny), and Hegazy falls in love with one of his victims, Fatima (Dina El-Sherbiny). In love with a charming performance artist, Amina Khalil.",
+      "Release_Date": "10 April 2024",
+      "Starring": "Mohamed Mamdouh, Amina Khalil, Dina El Sherbiny, Ahmad Fahmy, Yousra ., Amr Youssef",
+      "Language": "Arabic",
+      "classification": "+12",
+      "Subtitle": "English",
+      "trailer_youtube_link": "https://www.youtube.com/embed/cu9lC-461m4",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "LAHAZAT LAZEEZA",
+      "movie_image": "movie-4.jpg",
+      "Genre": "Comedy",
+      "Running_Time": "125 min",
+      "description": "Saleh Hesham Maged and Doria Hannah Al Zahed are a couple who live an unhappy life. They have a mischievous son who always causes them problems, and the parents always blame each other for these problems and shirk responsibility. One day, after a big quarrel between them, Doria leaves the house and Saleh is left alone. Saleh discovers a strange illuminated portal in the garage room of his house. Saleh crosses the portal to find a parallel world in which there is a better version of his home, his family, and his life. The events take place within a comedic framework with the participation of Bayoumi Fouad and Mohamed Tharwat.",
+      "Release_Date": "10 April 2024",
+      "Starring": "Hesham Maged, Hannah El Zahed",
+      "Language": "Arabic",
+      "classification": "G",
+      "Subtitle": "English",
+      "trailer_youtube_link": "https://www.youtube.com/embed/I6XDq5zOkok",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "THE FALL GUY",
+      "movie_image": "movie-5.jpg",
+      "Genre": "Action",
+      "Running_Time": "130 min",
+      "description": "Colt Seavers, a battered and past-his-prime action choreographer, finds himself working on a film set with Tom Ryder, a famous actor for whom he had doubled long ago. When Tom goes missing and the film, which is being directed by Jody Moreno, Colt's ex-girlfriend in her directing debut, is in danger of being shut down, Colt volunteers to find Tom and save Jody's debut film.",
+      "Release_Date": "02 May 2024",
+      "Starring": "Ryan Gosling, Emily Blunt, Winston Duke, Aaron Taylor-Johnson",
+      "Language": "English",
+      "classification": "+12",
+      "Subtitle": "Arabic",
+      "trailer_youtube_link": "https://www.youtube.com/embed/j7jPnwVGdZ8",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "GODZILLA X KONG: THE NEW EMPIRE",
+      "movie_image": "movie-6.jpg",
+      "Genre": "Action",
+      "Running_Time": "120 min",
+      "description": "The epic battle continues! Legendary Pictures’ cinematic Monsterverse follows up the explosive showdown of “Godzilla vs. Kong” with an all-new adventure that pits the almighty Kong and the fearsome Godzilla against a colossal undiscovered threat hidden within our world, challenging their very existence—and our own. “Godzilla x Kong: The New Empire” delves further into the histories of these Titans and their origins, as well as the mysteries of Skull Island and beyond, while uncovering the mythic battle that helped forge these extraordinary beings and tied them to humankind forever.",
+      "Release_Date": "17 April 2024",
+      "Starring": "Dan Stevens, Brian Tyree Henry, Kaylee Hottle, Rebecca Hall",
+      "Language": "English",
+      "classification": "+8",
+      "Subtitle": "No subtitle",
+      "trailer_youtube_link": "https://www.youtube.com/embed/MftJo9yM4_4",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "KUNG FU PANDA 4",
+      "movie_image": "movie-7.jpg",
+      "Genre": "Animation",
+      "Running_Time": "95 min",
+      "description": "This spring, for the first time in almost a decade, comedy icon Jack Black returns to his role as Po, the world’s most unlikely kung fu master, with a hilarious, butt-kicking new chapter in DreamWorks Animation’s beloved action-comedy franchise: Kung Fu Panda 4.",
+      "Release_Date": "11 April 2024",
+      "Starring": "Viola Davis, Jack Black, Awkwafina ,, Dustin Hoffman",
+      "Language": "English",
+      "classification": "G",
+      "Subtitle": "Arabic",
+      "trailer_youtube_link": "https://www.youtube.com/embed/frMrqU-3NLs",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "3ALMASHI",
+      "movie_image": "movie-8.jpg",
+      "Genre": "Comedy",
+      "Running_Time": "100 min",
+      "description": "In this comedic tale, Hadi Hadi Abd al-Hadi, a quintessentially lazy thirty-year-old who lives with his equally inactive father and grandfather, finds his life upended when diagnosed with a rare condition that necessitates constant movement to avoid deadly blood clots. Forced to abandon his sedentary lifestyle, Hadi embarks on a humorous journey of non-stop walking, running, and creatively staying active, with only one precious hour of rest per day. This drastic change thrusts him into hilarious scenarios as he tries to balance work, a budding love interest, and his health. Through his comedic struggles, Hadi discovers a new zest for life, learning that purpose and fulfillment can emerge from the most unexpected circumstances, transforming his once-lazy existence into one filled with meaning and action.",
+      "Release_Date": "10 April 2024",
+      "Starring": "Karim Afify, Ali Rabih, Aya Samaha",
+      "Language": "Arabic",
+      "classification": "G",
+      "Subtitle": "English",
+      "trailer_youtube_link": "https://www.youtube.com/embed/RgV1UJcK31M",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "LAND OF BAD",
+      "movie_image": "movie-9.jpg",
+      "Genre": "Action",
+      "Running_Time": "110 min",
+      "description": "Starring Russell Crowe and Liam Hemsworth, a covert Special Forces operation in the South Philippines spirals into a brutal 48-hour battle for survival. When an elite extraction team is ambushed deep in enemy territory, rookie officer Kinney (Hemsworth) is left outnumbered but determined to leave no man behind. With an air strike closing in, Kinney's only hope hinges on the guidance of Air Force drone pilot Reaper (Crowe), navigating unknowable danger where every move could be their last.",
+      "Release_Date": "08 May 2024",
+      "Starring": "Liam Hemsworth, Milo Ventimiglia, Luke Hemsworth, Russel Crowe",
+      "Language": "English",
+      "classification": "+16",
+      "Subtitle": "Arabic",
+      "trailer_youtube_link": "https://www.youtube.com/embed/UlPZ4goEaSw",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "GHOSTBUSTERS: FROZEN EMPIRE",
+      "movie_image": "movie-10.jpg",
+      "Genre": "Adventure",
+      "Running_Time": "115 min",
+      "description": "When the discovery of an ancient artifact unleashes an evil force, Ghostbusters new and old must join forces to protect their home and save the world from a second ice age.",
+      "Release_Date": "02 May 2024",
+      "Starring": "Annie Potts, Mckenna Grace, Carrie Coon",
+      "Language": "English",
+      "classification": "+12",
+      "Subtitle": "Arabic",
+      "trailer_youtube_link": "https://www.youtube.com/embed/Jf0UJlhjmpc",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "WINNIE THE POOH: BLOOD & HONEY 2",
+      "movie_image": "movie-11.jpg",
+      "Genre": "Horror",
+      "Running_Time": "100 min",
+      "description": "Deep within the 100-Acre-Wood, a destructive rage grows as Winnie-the-Pooh, Piglet, Owl, and Tigger find their home and their lives endangered after Christopher Robin revealed their existence. Not wanting to live in the shadows any longer, the group decides to take the fight to the town of Ashdown, home of Christopher Robin, leaving a bloody trail of death and mayhem in their wake. Winnie and his savage friends will show everyone that they are deadlier, stronger, and smarter than anyone could ever imagine and get their revenge on Christopher Robin, once and for all.",
+      "Release_Date": "02 May 2024",
+      "Starring": "Craig David Dowsett, Chris Cordell, Nikolai Leo",
+      "Language": "English",
+      "classification": "+18",
+      "Subtitle": "Arabic",
+      "trailer_youtube_link": "https://www.youtube.com/embed/HMERs7Nmpmw",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "CIVIL WAR",
+      "movie_image": "movie-12.jpg",
+      "Genre": "War",
+      "Running_Time": "110 min",
+      "description": "An adrenaline-fueled thrill ride through a near-future fractured America balanced on the razor's edge.",
+      "Release_Date": "25 April 2024",
+      "Starring": "Kristen Dunst, Cailee Spaeny, Wagner Moura",
+      "Language": "English",
+      "classification": "+16",
+      "Subtitle": "Arabic",
+      "trailer_youtube_link": "https://www.youtube.com/embed/7FOWHcsqre8",
+      "rating": "5",
+      "reviews": [],
+      "seats": "",
+      "show_times": [
+        {
+          "loaction": "City Stars",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        },
+        {
+          "loaction": "City Center Almaza",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
+        },
+        {
+          "loaction": "Mall Of Egypt",
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
+        },
+        {
+          "loaction": "City Center Alexandria",
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
+        }
+      ]
+    }
+  ]
+}
