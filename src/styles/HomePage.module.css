@@ -1,0 +1,49 @@
+.btn {
+    background-color: #d40f7d !important;
+    border-color: #d40f7d !important;
+    font-size: 14px;
+    border-radius: 3px !important;
+  }
+  
+  .now-showing {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .classification {
+    width: 30px;
+  }
+  .card{
+    background-color: #262729 !important;
+  }
+  .card-title {
+    font-size: 1rem !important;
+    height: 1.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--color-text);
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+  }
+  .dashed {
+    border-bottom: 1px dashed #515254;
+  }
+  
+  .what {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 28px;
+  }
+  .what::before {
+    background-color: #009ddb;
+    content: "";
+    display: block;
+    height: 3px;
+    margin-bottom: 10px;
+    width: 60px;
+  }
+  a {
+    font-size: 16px !important;
+  }
