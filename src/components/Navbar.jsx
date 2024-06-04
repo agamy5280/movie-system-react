@@ -6,9 +6,10 @@ const Navbar = () => {
         <div className={navstyle["navbar-custom"]}>
             <nav className={`navbar navbar-expand-lg navbar-dark mb-3`}>
             <div className={`container-fluid ${navstyle["container-main"]}`}>
-                {/* <Link className="navbar-brand" to={"/"}> */}
+                <Link className="navbar-brand" to="/">
                     <img className={navstyle["logo"]} src="assets/images/logo-dark.png" alt='logo'/>
-                {/* </Link> */}
+                </Link>
+
                 <button
                 className="navbar-toggler"
                 type="button"
@@ -27,8 +28,7 @@ const Navbar = () => {
                     <a
                         className={`nav-link active fw-bold text-uppercase ${navstyle["item-hover"]}`}
                         aria-current="page"
-                        >Home</a
-                    >
+                        >Home</a>
                     </li>
                     <li className="nav-item dropdown ps-3">
                     <a
