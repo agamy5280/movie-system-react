@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import navstyle from "../styles/Navbar.module.css";
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import BookOnlineIcon from '@mui/icons-material/BookOnline';
+import LogoutIcon from '@mui/icons-material/Logout';
 const Navbar = () => {
+    const [imgSource,setImgSource] = useState("assets/images/eng.svg");
+    const [language,setLanguage] = useState("English");
+
+    const {t,i18n} = useTranslation();
+
+    const handelChangeArabic=()=>{
+        setImgSource("assets/images/eg.svg");
+        setLanguage("Arabic");
+        i18n.changeLanguage("ar");
+    }
+    const handelChangeEnglish=()=>{
+        setImgSource("assets/images/eng.svg");
+        setLanguage("English");
+        i18n.changeLanguage("en");
+    }
     return (
         <div className={navstyle["navbar-custom"]}>
             <nav className={`navbar navbar-expand-lg navbar-dark mb-3`}>
@@ -55,7 +74,7 @@ const Navbar = () => {
                     </li>
                 </ul>
 
-                <ul className="navbar-nav ms-auto">
+                {/* <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
                     <a
                         id={navstyle["login-btn"]}
@@ -68,7 +87,7 @@ const Navbar = () => {
                         >Sign-up</a
                     >
                     </li>
-                </ul>
+                </ul> */}
                 
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item dropdown">
@@ -80,26 +99,47 @@ const Navbar = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                     >
-                        My Account
+                        {t("My Account")}
                     </a>
                     <ul className={`${navstyle["dropdown-menu"]} dropdown-menu`} aria-labelledby="navbarDropdown">
                         <li>
                         <a className={`${navstyle["dropdown-item"]} dropdown-item`}
-                         id={navstyle["click"]}>Profile</a
+                         id={navstyle["click"]}>{t("Profile")}</a
                         >
                         </li>
-                        <li><hr className="dropdown-divider" /></li>
                         <li>
                         <a className={`${navstyle["dropdown-item"]} dropdown-item`}
                          id={navstyle["click"]}
-                            >Last Reservations</a
+                            >{t("Last Reservations")}</a
                         >
                         </li>
-                        <li><hr className="dropdown-divider" /></li>
                         <li>
-                        <a className={`${navstyle["dropdown-item"]} dropdown-item`} id={navstyle["click"]}>Logout</a>
+                        <a className={`${navstyle["dropdown-item"]} dropdown-item`} id={navstyle["click"]}>
+                            <LogoutIcon></LogoutIcon> {t("Logout")}</a>
                         </li>
                     </ul>
+                    </li>
+                </ul>
+                <ul className="navbar-nav">
+                    <li className="nav-item dropdown">
+                    <a
+                        className={`ps-3 nav-link dropdown-toggle ${navstyle["item-hover"]} text-uppercase fw-bold active`}
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                    {t(language)} <img src={imgSource} style={{width:"30px" , height:"30px", marginLeft:"5px"}}/>  
+                    </a>
+                        <ul className={`${navstyle["dropdown-menu"]} dropdown-menu ms-3`} aria-labelledby="Dropdown">
+                            <li>
+                                <a  className={`${navstyle["dropdown-item"]} dropdown-item text-uppercase`} onClick={handelChangeEnglish}><img src='assets/images/eng.svg' style={{width:"30px" , height:"30px", marginRight:"5px"}}/> {t("English")}</a>
+                            </li>
+                            <li>
+                                <a  className={`${navstyle["dropdown-item"]} dropdown-item text-uppercase`} onClick={handelChangeArabic}><img src='assets/images/eg.svg' style={{width:"30px" , height:"30px", marginRight:"5px"}}/> {t("Arabic")}</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 </div>

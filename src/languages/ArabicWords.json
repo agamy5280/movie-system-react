@@ -1,3 +1,10 @@
 {
-    "Welcome to React": "اهلا بك في رياكت"
+    "Arabic": "عربي",
+    "English": "انجليزي",
+    "My Account":"حسابي",
+    "Profile":"حساب تعريفي",
+    "Last Reservations":"حجوزاتي السابقه",
+    "Logout":"تسجيل الخروج"
+
+
 }
