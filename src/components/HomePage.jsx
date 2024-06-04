@@ -11,9 +11,9 @@ const HomePage = () => {
         dispatch(getMovies())
     },[])
     return (
-        <div className="home p-2">
+        <div className="home p-2" dir={`${(i18n.language==="en")?"ltr":"rtl"}`}>
             <div className={homeStyle["now-showing"]}>
-                <h1 className={homeStyle["what"]}>What&#39;s On</h1>
+                <h1 className={homeStyle["what"]}>{t("What's On")}</h1>
                 <p className={`${homeStyle["dashed"]} dashed pb-2`}></p>
                 <div className="container p-0">
                 <div className="row">
@@ -36,11 +36,11 @@ const HomePage = () => {
                                             />
                                         </p>
                                         <p className="card-text">
-                                            <span className="fw-bold">Language:</span> { movie.Language }
+                                            <span className="fw-bold">{t("Language")}:</span> { t(movie.Language) }
                                         </p>
                                         <a
                                             className={`${homeStyle["btn"]} btn btn-secondary btn-lg`}
-                                            >Show Info</a
+                                            >{t("Show Info")}</a
                                         >
                                         </div>
                                     </div>

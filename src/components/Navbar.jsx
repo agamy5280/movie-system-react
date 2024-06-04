@@ -22,10 +22,10 @@ const Navbar = () => {
         i18n.changeLanguage("en");
     }
     return (
-        <div className={navstyle["navbar-custom"]}>
+        <div className={navstyle["navbar-custom"]} >
             <nav className={`navbar navbar-expand-lg navbar-dark mb-3`}>
             <div className={`container-fluid ${navstyle["container-main"]}`}>
-                <Link className="navbar-brand" to="/">
+                <Link className="navbar-brand" to="/" >
                     <img className={navstyle["logo"]} src="assets/images/logo-dark.png" alt='logo'/>
                 </Link>
 
@@ -47,7 +47,7 @@ const Navbar = () => {
                     <a
                         className={`nav-link active fw-bold text-uppercase ${navstyle["item-hover"]}`}
                         aria-current="page"
-                        >Home</a>
+                        >{t("Home")}</a>
                     </li>
                     <li className="nav-item dropdown ps-3">
                     <a
@@ -57,17 +57,17 @@ const Navbar = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                     >
-                        Movies
+                        {t("Movies")}
                     </a>
                     <ul className={`${navstyle["dropdown-menu"]} dropdown-menu ms-3`} aria-labelledby="navbarDropdown">
                         <li>
                         <a className={`${navstyle["dropdown-item"]} dropdown-item text-uppercase`}
-                            >What's On</a
+                            >{t("What's On")}</a
                         >
                         </li>
                         <li>
                         <a className={`${navstyle["dropdown-item"]} dropdown-item text-uppercase`}
-                            >Coming Soon</a
+                            >{t("Coming Soon")}</a
                         >
                         </li>
                     </ul>
