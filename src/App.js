@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import HomePage from './components/HomePage';
+import Log_in from './components/Log_in.jsx';
+
 import './i18n';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -18,18 +20,19 @@ function App() {
           index: true,
           element: <HomePage></HomePage>
         },
-      ]
-    },
-    {
-      path:'/times',
-      element: <Header></Header>,
-      children:[
         {
-          index: true,
-          element: <ShowTimes></ShowTimes>
+          path: "/login",
+          element:<Log_in/>
         },
+        {
+          path: "/times",
+          element:<ShowTimes/>
+        },
+        
+        
       ]
     }
+    
   ])
   return (
     <div className="App">
