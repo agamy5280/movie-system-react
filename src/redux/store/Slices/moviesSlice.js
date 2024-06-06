@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 export const getMovies = createAsyncThunk("movies/getAll",async ()=>{
-    const result = await axios.get("http://localhost:3000/movies");
+    const result = await axios.get("http://localhost:4000/movies");
     return result.data;
 })
 

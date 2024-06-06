@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store/store';
 import Header from './components/Main.jsx';
+import ShowTimes from './components/ShowTimes.jsx';
 
 function App() {
   const router = createBrowserRouter([
@@ -16,7 +17,17 @@ function App() {
         {
           index: true,
           element: <HomePage></HomePage>
-        }
+        },
+      ]
+    },
+    {
+      path:'/times',
+      element: <Header></Header>,
+      children:[
+        {
+          index: true,
+          element: <ShowTimes></ShowTimes>
+        },
       ]
     }
   ])
