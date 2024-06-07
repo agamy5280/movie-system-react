@@ -12,6 +12,7 @@ import ProfileEdit from "./components/ProfileEdit.jsx";
 import MoviePage from "./components/MoviePage.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
 import FavoritesMovies from "./components/MoviesFavorites.jsx";
+import MovieSeats from "./components/MovieSeats.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
         {
           path: "/favorites",
           element: <FavoritesMovies />,
+        },
+        {
+          path: "/seats",
+          element: <MovieSeats />,
         },
         {
           path: "*",
