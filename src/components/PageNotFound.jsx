@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/PageNF.module.css";
+import styles from "../styles/PageNF.module.css";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 export default function PageNotFound() {
@@ -730,7 +730,7 @@ export default function PageNotFound() {
                 a mystery. But you can click the button below to go back to the
                 homepage.
               </p>
-              <Link to="/" className="btn green">
+              <Link to="/" className={`${styles.myBtn} ${styles.green}`}>
                 HOME
               </Link>
             </div>

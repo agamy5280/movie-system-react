@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
 
-.scoped-container {
+:root {
   --blue: #0e0620;
   --white: #fff;
   --green: #2ccf6d;
@@ -44,7 +44,7 @@
   font-weight: bold;
 }
 
-.scoped-container .btn {
+.myBtn {
   z-index: 1;
   overflow: hidden;
   background: transparent;
@@ -57,14 +57,15 @@
   transition: 0.2s ease;
   font-weight: bold;
   margin: 5px 0px;
+  text-decoration: none;
 }
 
-.scoped-container .btn.green {
+.myBtn.green {
   border: 4px solid var(--green);
-  color: var(--blue);
+  color: var(--white);
 }
 
-.scoped-container .btn.green:before {
+.myBtn.green:before {
   content: "";
   position: absolute;
   left: 0;
@@ -76,13 +77,13 @@
   transition: 0.2s ease;
 }
 
-.scoped-container .btn.green:hover {
+.myBtn.green:hover {
   color: var(--white);
   background: var(--green);
   transition: 0.2s ease;
 }
 
-.scoped-container .btn.green:hover:before {
+.myBtn.green:hover:before {
   width: 100%;
 }
 
