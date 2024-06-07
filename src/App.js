@@ -10,6 +10,7 @@ import store from "./redux/store/store";
 import Header from "./components/Main.jsx";
 import ProfileEdit from "./components/ProfileEdit.jsx";
 import MoviePage from "./components/MoviePage.jsx";
+import PageNotFound from "./components/PageNotFound.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -32,6 +33,10 @@ function App() {
         {
           path: "/movie",
           element: <MoviePage />,
+        },
+        {
+          path: "*",
+          element: <PageNotFound />,
         },
       ],
     },
