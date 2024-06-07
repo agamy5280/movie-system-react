@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import navstyle from "../styles/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 const Navbar = () => {
   const [imgSource, setImgSource] = useState("assets/images/eng.svg");
   const [language, setLanguage] = useState("English");
-
+  let user = null;
   const { t, i18n } = useTranslation();
 
   const handelChangeArabic = () => {
@@ -21,6 +21,14 @@ const Navbar = () => {
     setLanguage("English");
     i18n.changeLanguage("en");
   };
+  useEffect(()=>{
+    user = localStorage.getItem("userLogged");
+  },[user]);
+  
+  const logout =()=>{
+    localStorage.clear();
+    user = null;
+  }
   return (
     <div className={navstyle["navbar-custom"]}>
       <nav className={`navbar navbar-expand-lg navbar-dark mb-3`}>
@@ -48,12 +56,13 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item ps-3">
-                <a
+                <Link
                   className={`nav-link active fw-bold text-uppercase ${navstyle["item-hover"]}`}
                   aria-current="page"
+                  to={"/"}
                 >
                   {t("Home")}
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown ps-3">
                 <a
@@ -70,11 +79,12 @@ const Navbar = () => {
                   aria-labelledby="navbarDropdown"
                 >
                   <li>
-                    <a
+                    <Link
                       className={`${navstyle["dropdown-item"]} dropdown-item text-uppercase`}
+                      to={"/"}
                     >
                       {t("What's On")}
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
@@ -87,11 +97,14 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {/* <ul className="navbar-nav ms-auto">
+            {!user ? <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                    <a
+                    <Link
                         id={navstyle["login-btn"]}
-                        className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}>Login</a>
+                        className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}
+                        to={"/login"}>
+                          Login
+                    </Link>
                     </li>
                     <li className="nav-item">
                     <a
@@ -100,9 +113,8 @@ const Navbar = () => {
                         >Sign-up</a
                     >
                     </li>
-                </ul> */}
-
-            <ul className="navbar-nav ms-auto">
+                </ul>:
+                <ul className="navbar-nav ms-auto">
               <li className="nav-item dropdown">
                 <a
                   className={`ps-3 nav-link dropdown-toggle ${navstyle["item-hover"]} text-uppercase fw-bold active`}
@@ -119,28 +131,31 @@ const Navbar = () => {
                   aria-labelledby="navbarDropdown"
                 >
                   <li>
-                    <a
+                    <Link
                       className={`${navstyle["dropdown-item"]} dropdown-item`}
                       id={navstyle["click"]}
+                      to={"/profile-edit"}
                     >
                       {t("Profile")}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className={`${navstyle["dropdown-item"]} dropdown-item`}
                       id={navstyle["click"]}
+                      to={"/"}
                     >
                       {t("Last Reservations")}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className={`${navstyle["dropdown-item"]} dropdown-item`}
                       id={navstyle["click"]}
+                      to={"/favorites"}
                     >
                       {t("Movies Favorites")}
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
@@ -153,6 +168,9 @@ const Navbar = () => {
                 </ul>
               </li>
             </ul>
+          }
+
+            
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
                 <a

@@ -46,7 +46,6 @@ export default function MoviePage() {
       {" "}
       <div className={styles.row}>
         <h2 className={styles["title-header"]}>
-          {t("What's On")}
           {movie.title}
         </h2>
       </div>
