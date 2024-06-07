@@ -8,7 +8,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 const Navbar = () => {
   const [imgSource, setImgSource] = useState("assets/images/eng.svg");
   const [language, setLanguage] = useState("English");
-  let user = null;
+  const [user,setUser] = useState(localStorage.getItem("userData"));
   const { t, i18n } = useTranslation();
 
   const handelChangeArabic = () => {
@@ -21,13 +21,13 @@ const Navbar = () => {
     setLanguage("English");
     i18n.changeLanguage("en");
   };
-  useEffect(()=>{
-    user = localStorage.getItem("userLogged");
-  },[user]);
   
+  const login=()=>{
+    setUser(localStorage.getItem("userData"))
+  }
   const logout =()=>{
     localStorage.clear();
-    user = null;
+    setUser(null);
   }
   return (
     <div className={navstyle["navbar-custom"]}>
@@ -97,12 +97,13 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {!user ? <ul className="navbar-nav ms-auto">
+            {user === null ? <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
                     <Link
                         id={navstyle["login-btn"]}
                         className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}
-                        to={"/login"}>
+                        to={"/login"}
+                        onClick={login}>
                           Login
                     </Link>
                     </li>
@@ -161,6 +162,7 @@ const Navbar = () => {
                     <a
                       className={`${navstyle["dropdown-item"]} dropdown-item`}
                       id={navstyle["click"]}
+                      onClick={logout}
                     >
                       <LogoutIcon></LogoutIcon> {t("Logout")}
                     </a>
