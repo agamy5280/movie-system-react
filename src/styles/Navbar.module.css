@@ -1,40 +1,41 @@
 @font-face {
   font-family: "Effra";
-  src: local('Effra'), url('../erraf.ttf') format('truetype');
+  src: local("Effra"), url("../erraf.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-*{
-    font-family: "Effra", Tahoma, Arial, Helvetica, sans-serif !important;
-    color: white !important;
+* {
+  font-family: "Effra", Tahoma, Arial, Helvetica, sans-serif !important;
+  /* color: white !important; */
 }
 
 .navbar-custom {
-    background-color: #1a1b1d !important;
+  background-color: #1a1b1d !important;
 }
 
 .container-main {
-    max-width: 950px;    
+  max-width: 950px;
 }
 .dropdown-item {
-    color: white !important;
-    background-color: black;
+  color: white !important;
+  background-color: black;
 }
-  .dropdown-item:hover,
-  .item-hover:hover {
-    color: #009ddb !important;
+.dropdown-item:hover,
+.item-hover:hover {
+  color: #009ddb !important;
 }
-  .dropdown-menu ,.dropdown-item:hover {
-    background-color: black !important;
-  }
-  .logo {
-    height: 40px;
-    width: 120px;
-  }
-  #click {
-    cursor: pointer;
-  }
-  #login-btn {
-    cursor: pointer;
-  }
+.dropdown-menu,
+.dropdown-item:hover {
+  background-color: black !important;
+}
+.logo {
+  height: 40px;
+  width: 120px;
+}
+#click {
+  cursor: pointer;
+}
+#login-btn {
+  cursor: pointer;
+}

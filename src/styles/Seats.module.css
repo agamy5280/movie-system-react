@@ -1,0 +1,206 @@
+/* Global styles */
+* {
+  font-family: sans-serif;
+}
+
+/* Title section */
+.title {
+  margin-top: 10px;
+}
+
+.chooseSeats {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.seatImg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+  margin-right: 0.8rem;
+}
+
+.titleSeats {
+  color: #7aba78;
+  text-transform: uppercase;
+}
+
+/* Seat map section */
+.seatMap {
+  width: 35%;
+  margin: 50px auto;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.screen {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(686px / 2.5);
+  width: calc(480px / 1.5);
+  border-radius: 3px;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+.screenImg {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.seatsContainer {
+  margin-top: 300px;
+  display: flex;
+}
+
+.leftSeats {
+  margin-right: 30px;
+}
+
+.rightSeats {
+  margin-left: 30px;
+}
+
+.rowSeat {
+  display: flex;
+  justify-content: center;
+}
+
+/* Seat styling */
+.seat {
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  margin: 5px;
+  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.occupied {
+  background-color: #8b322c;
+}
+
+.selected {
+  background-color: #1a4d2e;
+}
+
+/* Seat info section */
+.seatInfo {
+  background-color: #393e46;
+  padding: 4px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 8px;
+}
+
+.seatOriantationInfo {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.seatEmptyInfo {
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  margin: 5px;
+  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.seatSelectedInfo {
+  width: 30px;
+  height: 30px;
+  background-color: #1a4d2e;
+  margin: 5px;
+  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.seatOccupiedInfo {
+  width: 30px;
+  height: 30px;
+  background-color: #8b322c;
+  margin: 5px;
+  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.seatStatus {
+  margin: 10px 0;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #393e46;
+}
+
+/* Seat details section */
+.seatDetails {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 20%;
+  margin: 0 auto;
+  background-color: #393e46;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selectedSeats,
+.totalPrice {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.selectedSeats span,
+.totalPrice span {
+  color: #7aba78;
+  background-color: transparent;
+}
+
+.totalPrice {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.confirmBtn {
+  display: block;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #4d869c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.confirmBtn:hover {
+  background-color: #1a4d2e;
+}

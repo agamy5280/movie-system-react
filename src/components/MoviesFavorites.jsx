@@ -1,46 +1,29 @@
 import React, { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { getMovies } from "../redux/store/Slices/moviesSlice";
-import homeStyle from "../styles/HomePage.module.css";
-import Button from "@mui/material/Button";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import { selectFavorites } from "../redux/store/Slices/favoritesSlice";
 import Spinner from "./Spinner";
-import {
-  addFavorite,
-  removeFavorite,
-} from "../redux/store/Slices/favoritesSlice";
-import { hover } from "@testing-library/user-event/dist/hover";
-const HomePage = () => {
+import homeStyle from "../styles/HomePage.module.css";
+export default function FavoritesMovies() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movies.movies);
   const status = useSelector((state) => state.movies.status);
-  const favorites = useSelector((state) => state.favorites.movies);
-  const isFavorite = (movieId) => {
-    console.log(favorites);
-    return favorites.some((favorite) => favorite.id === movieId);
-  };
-  useEffect(() => {
-    dispatch(getMovies());
-  }, []);
-  const handleAddToFavorites = (movie) => {
-    dispatch(addFavorite(movie));
-  };
-  const handleRemoveFromFavorites = (movie) => {
-    dispatch(removeFavorite(movie));
-  };
-  if (status === "loading" || !movies) {
+
+  const favorites = useSelector(selectFavorites);
+  if (status === "loading" || !favorites) {
     return <Spinner />;
   }
+
   return (
     <div className="home p-2" dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}>
       <div className={homeStyle["now-showing"]}>
-        <h1 className={homeStyle["what"]}>{t("What's On")}</h1>
+        <h1 className={homeStyle["what"]}>{t("Movies Favorites")}</h1>
         <p className={`${homeStyle["dashed"]} dashed pb-2`}></p>
         <div className="container p-0">
           <div className="row">
-            {movies?.map((movie) => {
+            {favorites?.map((movie) => {
               return (
                 <div className="col-sm-3" key={movie.id}>
                   <div className={`${homeStyle["card"]} card border-0 pb-2`}>
@@ -68,23 +51,6 @@ const HomePage = () => {
                       >
                         {t("Show Info")}
                       </a>
-                      <Button
-                        size="small"
-                        onClick={() => {
-                          if (isFavorite(movie.id)) {
-                            handleRemoveFromFavorites(movie);
-                          } else {
-                            handleAddToFavorites(movie);
-                          }
-                        }}
-                        sx={{
-                          color: isFavorite(movie.id)
-                            ? "#d40f7d !important"
-                            : "grey !important",
-                        }}
-                      >
-                        <FavoriteIcon className={homeStyle.myBtn} />
-                      </Button>
                     </div>
                   </div>
                 </div>
@@ -95,6 +61,4 @@ const HomePage = () => {
       </div>
     </div>
   );
-};
-
-export default HomePage;
+}
