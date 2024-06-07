@@ -50,5 +50,10 @@
   "Total Price": "السعر الكلي",
   "Confirm": "تأكيد",
   "Submit":"تسليم",
-  "Password":"كلمة السر"
+  "Password":"كلمة السر",
+  "Minimum password length is 8 characters":"الحد الأدنى لطول كلمة المرور هو 8 أحرف",
+  "Password is required":"كلمة السر مطلوبة",
+  "Invalid email format":" البريد الإلكتروني غير صالح",
+  "Email is required":"البريد الإلكتروني مطلوب"
+
 }
