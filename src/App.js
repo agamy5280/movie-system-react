@@ -11,6 +11,7 @@ import Header from "./components/Main.jsx";
 import ProfileEdit from "./components/ProfileEdit.jsx";
 import MoviePage from "./components/MoviePage.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
+import FavoritesMovies from "./components/MoviesFavorites.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ function App() {
         {
           path: "/movie",
           element: <MoviePage />,
+        },
+        {
+          path: "/favorites",
+          element: <FavoritesMovies />,
         },
         {
           path: "*",

@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
-import styles from "../styles/MoviePage.module.css"; // Import CSS module
+import styles from "../styles/MoviePage.module.css";
 import Spinner from "./Spinner";
 import { getMovieByID } from "../redux/store/Slices/moviesSlice";
 import { useNavigate } from "react-router-dom";
 
 export default function MoviePage() {
+  const { t, i18n } = useTranslation();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   const dispatch = useDispatch();
@@ -37,11 +39,16 @@ export default function MoviePage() {
   }
 
   return (
-    <div className={styles["now-showing"]}>
+    <div
+      className={styles["now-showing"]}
+      dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}
+    >
       {" "}
-      {/* Apply CSS class using object notation */}
       <div className={styles.row}>
-        <h2 className={styles["title-header"]}>{movie.title}</h2>
+        <h2 className={styles["title-header"]}>
+          {t("What's On")}
+          {movie.title}
+        </h2>
       </div>
       <div className={styles["movie-container"]}>
         <div>
@@ -66,26 +73,26 @@ export default function MoviePage() {
       <div className={styles["movie-details"]}>
         <div>
           <p>
-            Genre: <span>{movie.Genre}</span>
+            {t("Genre")}: <span>{movie.Genre}</span>
           </p>
           <p>
             Cast: <span>{movie.Starring}</span>
           </p>
           <p>
-            Language: <span>{movie.Language}</span>
+            {t("Language")}: <span>{movie.Language}</span>
           </p>
           <p>
-            Classification: <span>{movie.classification}</span>
+            {t("Classification")}: <span>{movie.classification}</span>
           </p>
           <p>
-            Subtitle(s): <span>{movie.Subtitle}</span>
+            {t("Subtitle(s)")}: <span>{movie.Subtitle}</span>
           </p>
           <p>
-            Rating: <span>{movie.rating}</span>
+            {t("Rating")}: <span>{movie.rating}</span>
           </p>
         </div>
         <div className={styles.desc}>
-          <p>{movie.description}</p>
+          <p>{t(movie.description)}</p>
         </div>
       </div>
       <div className={styles["showtimes-button"]}>
@@ -93,7 +100,7 @@ export default function MoviePage() {
           className={`btn btn-secondary btn-lg ${styles.btn}`}
           onClick={sendParams}
           type="button"
-          value="View Showtimes"
+          value={t("View Showtimes")}
         />
       </div>
     </div>

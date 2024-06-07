@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import styles from "../styles/Profile.module.css";
@@ -7,6 +8,7 @@ import Spinner from "./Spinner";
 import { getUserByID, updateUser } from "../redux/store/Slices/usersSlice";
 
 export default function ProfileEdit() {
+  const { t, i18n } = useTranslation();
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   const dispatch = useDispatch();
@@ -50,7 +52,11 @@ export default function ProfileEdit() {
   }
 
   return (
-    <form className={styles.registerForm} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={styles.registerForm}
+      onSubmit={handleSubmit(onSubmit)}
+      dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}
+    >
       <div>
         <div className={styles.mySpan}>
           <h5>
@@ -59,12 +65,12 @@ export default function ProfileEdit() {
               src="assets/images/user.png"
               alt="User icon"
             />
-            <span>Account Profile</span>
+            <span>{t("Account Profile")}</span>
           </h5>
         </div>
         <div>
           <div>
-            <label>First Name</label>
+            <label>{t("First Name")}</label>
             <input
               type="text"
               placeholder="John"
@@ -86,7 +92,7 @@ export default function ProfileEdit() {
             )}
           </div>
           <div>
-            <label>Last Name</label>
+            <label>{t("Last Name")}</label>
             <input
               type="text"
               placeholder="Doe"
@@ -108,7 +114,7 @@ export default function ProfileEdit() {
             )}
           </div>
           <div>
-            <label>Phone Number</label>
+            <label>{t("Phone Number")}</label>
             <input
               type="text"
               placeholder="+123 456 789"
@@ -135,7 +141,7 @@ export default function ProfileEdit() {
             )}
           </div>
           <div>
-            <label>Email</label>
+            <label>{t("Email")}</label>
             <input
               type="text"
               placeholder="John@hotmail.com"
@@ -156,7 +162,7 @@ export default function ProfileEdit() {
         <input
           type="submit"
           className="btn btn-block btn-primary font-weight-bold py-3"
-          value="Edit Profile"
+          value={t("Edit Profile")}
           disabled={!isValid}
         />
       </div>
