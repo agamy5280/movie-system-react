@@ -1,3 +1,4 @@
+import { Flag } from "@mui/icons-material";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -19,6 +20,37 @@ export const updateUser = createAsyncThunk(
     return response.data;
   }
 );
+
+export const validateUser = createAsyncThunk(
+    "users/login",
+    async (user) => {
+   const response = await axios.get("http://localhost:8000/users");
+
+    var flag=false
+    for (const u of response.data) {
+        if (u.email == user.email && u.password == user.password) {
+          localStorage.setItem("userData", JSON.stringify(u));
+          flag=true
+
+        }
+      
+    
+      }
+      if(flag){
+        alert("log in succesfully");
+        window.location.href = "/";
+
+        
+
+    }else{
+        alert("wrong password or email");
+    }
+
+
+    }
+    );
+
+
 const userSlice = createSlice({
   name: "users",
   initialState: {
@@ -27,20 +59,6 @@ const userSlice = createSlice({
     status: "idle",
     error: null,
   },
-
-  // reducers:{
-  //     async validatUser(state, action) {
-  //     getUsers();
-  //      for (const u of state.users){
-  //         console.log(action.payload.email);
-  //         if (u.email==action.payload.email && u.password==action.payload.password){
-  //         alert("log in succesfully")
-  //     }
-
-  //     }
-
-  //     }
-  // },
 
   extraReducers: (builder) => {
     builder.addCase(getUsers.fulfilled, (state, action) => {
@@ -73,9 +91,21 @@ const userSlice = createSlice({
       .addCase(updateUser.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+    // ----------------------- vlidate User -------------------- //
+    .addCase(validateUser.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(validateUser.fulfilled, (state, action) => {
+        state.status = "succeeded";
+      })
+      .addCase(validateUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
       });
+
+
   },
 });
 
 export default userSlice.reducer;
-export const { validatUser } = userSlice.actions; // Export the custom reducer action
