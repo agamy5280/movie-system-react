@@ -5,6 +5,7 @@ import { getMovies } from "../redux/store/Slices/moviesSlice";
 import { selectFavorites } from "../redux/store/Slices/favoritesSlice";
 import Spinner from "./Spinner";
 import homeStyle from "../styles/HomePage.module.css";
+import { Link } from "react-router-dom";
 export default function FavoritesMovies() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
@@ -46,11 +47,12 @@ export default function FavoritesMovies() {
                         <span className="fw-bold">{t("Language")}:</span>{" "}
                         {t(movie.Language)}
                       </p>
-                      <a
+                      <Link
                         className={`${homeStyle["btn"]} btn btn-secondary btn-lg`}
+                        to={`/movie?id=${movie.id.toString()}`}
                       >
                         {t("Show Info")}
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
