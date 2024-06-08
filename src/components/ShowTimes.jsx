@@ -3,22 +3,39 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../redux/store/Slices/moviesSlice";
 import  timesStyle from "../styles/ShowTimesPage.module.css";
+import { useNavigate } from "react-router-dom";
+import { getMovieByID } from "../redux/store/Slices/moviesSlice";
+import Spinner from "./Spinner";
+
 export default function ShowTimes() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
-  const [movies, setMovies] = useState([]);
-  
-  useEffect(() => {
-    fetch("http://localhost:4000/movies")
-      .then(res => res.json())
-      .then(data => setMovies(data));
-  }, []);
-  
-  const id = 0;
+  const navigate = useNavigate();
+  const movie = useSelector((state) => state.movies.movie);
+  const status = useSelector((state) => state.movies.status);
+  const error = useSelector((state) => state.movies.error);
+  const id = 1;
   let showTimes = null;
+
+  useEffect(() => {
+    if (id) {
+      dispatch(getMovieByID(id));
+    }
+  }, [dispatch, id]);
+
+
+  if (status === "loading" || !movie) {
+    return <Spinner />;
+  }
+
+  if (status === "failed") {
+    return <div>Error: {error}</div>;
+  }
+
+
   
-  if (movies.length > 0) {
-    showTimes = movies[id]['show_times'];
+  if (movie) {
+    showTimes = movie['show_times'];
   }
   
   console.log(showTimes);
@@ -26,7 +43,7 @@ export default function ShowTimes() {
   return (
     <>
       {showTimes && <div className={timesStyle["now-showing"]}>
-       <h2 className={timesStyle["movie-name"]}>{ movies[id]['title'] }</h2>
+       <h2 className={timesStyle["movie-name"]}>{ movie['title'] }</h2>
         <p className={`${timesStyle["dashed"]} pb-2`}></p>
         <div className={`${timesStyle["location-bar"]} row`}></div>
 

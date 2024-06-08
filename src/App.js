@@ -3,14 +3,6 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 import Log_in from "./components/Log_in.jsx";
 
-<<<<<<< HEAD
-import './i18n';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './redux/store/store';
-import Header from './components/Main.jsx';
-import ShowTimes from './components/ShowTimes.jsx';
-=======
 import "./i18n";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -21,7 +13,7 @@ import MoviePage from "./components/MoviePage.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
 import FavoritesMovies from "./components/MoviesFavorites.jsx";
 import MovieSeats from "./components/MovieSeats.jsx";
->>>>>>> 110dce8ee12aba4e37497ca2b65eee98bac2e13d
+import ShowTimes from "./components/ShowTimes.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,17 +30,10 @@ function App() {
           element: <Log_in />,
         },
         {
-<<<<<<< HEAD
           path: "/times",
           element:<ShowTimes/>
         },
-        
-        
-      ]
-    }
-    
-  ])
-=======
+        {
           path: "/profile-edit",
           element: <ProfileEdit />,
         },
@@ -71,7 +56,6 @@ function App() {
       ],
     },
   ]);
->>>>>>> 110dce8ee12aba4e37497ca2b65eee98bac2e13d
   return (
     <div className="App">
       <Provider store={store}>
