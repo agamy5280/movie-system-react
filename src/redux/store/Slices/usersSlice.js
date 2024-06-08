@@ -49,7 +49,6 @@ export const validateUser = createAsyncThunk(
     }
     );
 
-
 const userSlice = createSlice({
   name: "users",
   initialState: {
@@ -101,9 +100,7 @@ const userSlice = createSlice({
       .addCase(validateUser.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
-      });
-
-
+      })
   },
 });
 

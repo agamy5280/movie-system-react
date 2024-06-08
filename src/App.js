@@ -14,6 +14,7 @@ import MovieSeats from "./components/MovieSeats.jsx";
 import ShowTimes from "./components/ShowTimes.jsx";
 import ComingSoon from "./components/ComingSoon.jsx";
 import ConfirmPage from "./components/ConfirmPage.jsx";
+import Register from "./components/Register.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -57,7 +58,10 @@ function App() {
           path: "/coming-soon",
           element: <ComingSoon/>
         },
-       
+        {
+          path:"/register",
+          element: <Register/>
+        },
         {
           path: "*",
           element: <PageNotFound />,
