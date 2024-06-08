@@ -90,11 +90,11 @@ export default function MovieSeats() {
       }
     }
   };
-
   const confirmReservation = () => {
     const params = new URLSearchParams({
       id: movie.id,
       title: movie.title,
+      image:movie.movie_image,
       time: movieTime,
       location: movieLocation,
       seats: selectedSeats,

@@ -1,0 +1,117 @@
+
+.now_showing {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+.dashed {
+  /* Commented out for now */
+  border-bottom: 1px dashed #515254;
+}
+
+.what {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.what::before {
+  background-color:  #009ddb;
+  content: "";
+  display: block;
+  height: 3px;
+  margin-bottom: 10px;
+  width: 60px;
+}
+
+.movie_sec {
+  height: 400px;
+  max-height: 400px;
+  display: flex;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  box-shadow: -2px 4px 6px #600739;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.movie_sec:hover {
+  padding: 3px;
+}
+
+.sec_img {
+  height: 100%;
+}
+
+.sec_img img {
+  height: 100%;
+}
+
+.info {
+  font-weight: 600;
+  word-spacing: 5px;
+  font-size: 120%;
+}
+
+.info p {
+  margin-bottom: 5%;
+}
+
+.info span {
+  font-weight: 200;
+  font-size: 90%;
+}
+
+.sec_details {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 2%;
+  font-family: "Effra";
+}
+
+.disc {
+  font-weight: 200;
+  font-size: 120%;
+  line-height: 150%;
+}
+/* Not used in the provided React code */
+
+.btn {
+  border-color: #bc0f71;
+  color: #bc0f71;
+  text-align: center;
+  height: 2.5rem !important;
+  width: 10rem !important;
+  padding: 5px 10px 0 10px;
+  font-size: 14px;
+  transition: 1s;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  border-color:#d40f7d;
+  color: white;
+  background-color: #d40f7d;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 5%;
+}
+
+.title::before {
+  background-color: #600739;
+  content: "";
+  display: block;
+  height: 3px;
+  margin-bottom: 10px;
+  width: 60px;
+}
