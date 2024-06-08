@@ -13,6 +13,7 @@ import FavoritesMovies from "./components/MoviesFavorites.jsx";
 import MovieSeats from "./components/MovieSeats.jsx";
 import ShowTimes from "./components/ShowTimes.jsx";
 import ComingSoon from "./components/ComingSoon.jsx";
+import ConfirmPage from "./components/ConfirmPage.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,9 +50,14 @@ function App() {
           element: <MovieSeats />,
         },
         {
+          path: "/confirm",
+          element: <ConfirmPage/>
+        },
+        {
           path: "/coming-soon",
           element: <ComingSoon/>
         },
+       
         {
           path: "*",
           element: <PageNotFound />,

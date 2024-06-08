@@ -1,4 +1,3 @@
-import { Flag } from "@mui/icons-material";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -28,7 +27,7 @@ export const validateUser = createAsyncThunk(
 
     var flag=false
     for (const u of response.data) {
-        if (u.email == user.email && u.password == user.password) {
+        if (u.email === user.email && u.password === user.password) {
           localStorage.setItem("userData", JSON.stringify(u));
           flag=true
 
