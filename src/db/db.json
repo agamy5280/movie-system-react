@@ -65,6 +65,15 @@
             "4G"
           ],
           "price": "400"
+        },
+        {
+          "id": "1",
+          "title": "KINGDOM OF THE PLANET OF THE APES",
+          "time": "8:30pm",
+          "seats": "1B,1C",
+          "price": "200",
+          "image": "movie-1.jpg",
+          "location": "City Center Almaza"
         }
       ]
     },
@@ -145,6 +154,15 @@
       "phoneNumber": "0100000000000000",
       "password": "123456789",
       "email": "marawan.agamy2010@hotmail.com",
+      "past-reservation": []
+    },
+    {
+      "id": "8ff8",
+      "firstName": "test",
+      "lastName": "test",
+      "phoneNumber": "01116971882",
+      "email": "test@gmail.com",
+      "password": "123456789",
       "past-reservation": []
     }
   ],

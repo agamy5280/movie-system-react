@@ -120,16 +120,17 @@ const Navbar = () => {
                     to={"/login"}
                     onClick={login}
                   >
-                    Login
+                    {t("Login")}
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a
+                  <Link
                     className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}
                     id={navstyle["login-btn"]}
+                    to={"/register"}
                   >
-                    Sign-up
-                  </a>
+                    {t("Sign-up")}
+                  </Link>
                 </li>
               </ul>
             ) : (
