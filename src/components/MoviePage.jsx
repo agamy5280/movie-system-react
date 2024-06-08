@@ -27,7 +27,7 @@ export default function MoviePage() {
     const params = new URLSearchParams({
       id: movie.id,
     });
-    navigate(`/showtimes?${params.toString()}`);
+    navigate(`/times?${params.toString()}`);
   };
 
   if (status === "loading" || !movie) {

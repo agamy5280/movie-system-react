@@ -6,16 +6,28 @@ import  timesStyle from "../styles/ShowTimesPage.module.css";
 import { useNavigate } from "react-router-dom";
 import { getMovieByID } from "../redux/store/Slices/moviesSlice";
 import Spinner from "./Spinner";
+import { useSearchParams } from "react-router-dom";
 
 export default function ShowTimes() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const movie = useSelector((state) => state.movies.movie);
   const status = useSelector((state) => state.movies.status);
   const error = useSelector((state) => state.movies.error);
-  const id = 1;
+  const id = searchParams.get("id");
   let showTimes = null;
+
+
+  const sendParams = (showTime, movieLocation) => {
+    const params = new URLSearchParams({
+      time: showTime,
+      id: movie.id,
+      location: movieLocation
+    });
+    navigate(`/seats?${params.toString()}`);
+  };
 
   useEffect(() => {
     if (id) {
@@ -52,7 +64,7 @@ export default function ShowTimes() {
             <h3 className={`${timesStyle["weekday"]}`}>{showTime.loaction}</h3>
             <div className={`${timesStyle["timecol"]} col`}>
               {showTime.times.map((time, index) => (
-                <a key={index} className={`${timesStyle["btn"]} btn`} role="button">
+                <a key={index} className={`${timesStyle["btn"]} btn`} role="button" onClick={()=>sendParams(time, showTime.loaction)}>
                   {time}
                 </a>
               ))}
