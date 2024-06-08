@@ -5,12 +5,18 @@ import { useTranslation } from "react-i18next";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import LogoutIcon from "@mui/icons-material/Logout";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import Badge from "@mui/material/Badge";
+import { selectFavorites } from "../redux/store/Slices/favoritesSlice";
+import { useSelector } from "react-redux";
+import IconButton from "@mui/material/IconButton";
+import { styled } from "@mui/material/styles";
 const Navbar = () => {
   const [imgSource, setImgSource] = useState("assets/images/eng.svg");
   const [language, setLanguage] = useState("English");
-  const [user,setUser] = useState(localStorage.getItem("userData"));
+  const [user, setUser] = useState(localStorage.getItem("userData"));
   const { t, i18n } = useTranslation();
-
+  const favorites = useSelector(selectFavorites);
   const handelChangeArabic = () => {
     setImgSource("assets/images/eg.svg");
     setLanguage("Arabic");
@@ -21,14 +27,19 @@ const Navbar = () => {
     setLanguage("English");
     i18n.changeLanguage("en");
   };
-  
-  const login=()=>{
-    setUser(localStorage.getItem("userData"))
-  }
-  const logout =()=>{
+
+  const login = () => {
+    setUser(localStorage.getItem("userData"));
+  };
+  const logout = () => {
     localStorage.clear();
     setUser(null);
-  }
+  };
+  const StyledFavoriteIcon = styled(FavoriteIcon)(({ theme }) => ({
+    "&:hover": {
+      color: "#d40f7d",
+    },
+  }));
   return (
     <div className={navstyle["navbar-custom"]}>
       <nav className={`navbar navbar-expand-lg navbar-dark mb-3`}>
@@ -91,8 +102,6 @@ const Navbar = () => {
                       className={`${navstyle["dropdown-item"]} dropdown-item text-uppercase`}
                       to={"/coming-soon"}
                     >
-                    
-
                       {t("Coming Soon")}
                     </Link>
                   </li>
@@ -100,82 +109,88 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {user === null ? <ul className="navbar-nav ms-auto">
-                    <li className="nav-item">
-                    <Link
-                        id={navstyle["login-btn"]}
-                        className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}
-                        to={"/login"}
-                        onClick={login}>
-                          Login
-                    </Link>
-                    </li>
-                    <li className="nav-item">
-                    <a
-                        className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}
-                        id={navstyle["login-btn"]}
-                        >Sign-up</a
-                    >
-                    </li>
-                </ul>:
-                <ul className="navbar-nav ms-auto">
-              <li className="nav-item dropdown">
-                <a
-                  className={`ps-3 nav-link dropdown-toggle ${navstyle["item-hover"]} text-uppercase fw-bold active`}
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  {t("My Account")}
-                </a>
-                <ul
-                  className={`${navstyle["dropdown-menu"]} dropdown-menu`}
-                  aria-labelledby="navbarDropdown"
-                >
-                  <li>
-                    <Link
-                      className={`${navstyle["dropdown-item"]} dropdown-item`}
-                      id={navstyle["click"]}
-                      to={"/profile-edit"}
-                    >
-                      {t("Profile")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={`${navstyle["dropdown-item"]} dropdown-item`}
-                      id={navstyle["click"]}
-                      to={"/"}
-                    >
-                      {t("Last Reservations")}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className={`${navstyle["dropdown-item"]} dropdown-item`}
-                      id={navstyle["click"]}
-                      to={"/favorites"}
-                    >
-                      {t("Movies Favorites")}
-                    </Link>
-                  </li>
-                  <li>
-                    <a
-                      className={`${navstyle["dropdown-item"]} dropdown-item`}
-                      id={navstyle["click"]}
-                      onClick={logout}
-                    >
-                      <LogoutIcon></LogoutIcon> {t("Logout")}
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          }
+            {user === null ? (
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item">
+                  <Link
+                    id={navstyle["login-btn"]}
+                    className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}
+                    to={"/login"}
+                    onClick={login}
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${navstyle["item-hover"]} active fw-bold text-uppercase ps-3`}
+                    id={navstyle["login-btn"]}
+                  >
+                    Sign-up
+                  </a>
+                </li>
+              </ul>
+            ) : (
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item dropdown">
+                  <a
+                    className={`ps-3 nav-link dropdown-toggle ${navstyle["item-hover"]} text-uppercase fw-bold active`}
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {t("My Account")}
+                  </a>
 
-            
+                  <ul
+                    className={`${navstyle["dropdown-menu"]} dropdown-menu`}
+                    aria-labelledby="navbarDropdown"
+                  >
+                    <li>
+                      <Link
+                        className={`${navstyle["dropdown-item"]} dropdown-item`}
+                        id={navstyle["click"]}
+                        to={"/profile-edit"}
+                      >
+                        {t("Profile")}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={`${navstyle["dropdown-item"]} dropdown-item`}
+                        id={navstyle["click"]}
+                        to={"/"}
+                      >
+                        {t("Last Reservations")}
+                      </Link>
+                    </li>
+                    <li>
+                      <a
+                        className={`${navstyle["dropdown-item"]} dropdown-item`}
+                        id={navstyle["click"]}
+                        onClick={logout}
+                      >
+                        <LogoutIcon></LogoutIcon> {t("Logout")}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link style={{ color: "#FFF" }} to={"/favorites"}>
+                    <Badge
+                      badgeContent={favorites.length}
+                      color="error"
+                      sx={{ marginTop: "6px", cursor: "pointer" }}
+                    >
+                      <StyledFavoriteIcon />
+                    </Badge>
+                  </Link>
+                </li>
+              </ul>
+            )}
+
             <ul className="navbar-nav">
               <li className="nav-item dropdown">
                 <a

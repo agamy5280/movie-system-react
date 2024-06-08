@@ -1,7 +1,6 @@
-
 * {
   font-family: "Effra", Tahoma, Arial, Helvetica, sans-serif;
-  background-color: var(--color-background);
+  /* background-color: var(--color-background); */
 }
 
 .dashed {

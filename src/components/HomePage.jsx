@@ -65,7 +65,7 @@ const HomePage = () => {
                       </p>
                       <Link
                         className={`${homeStyle["btn"]} btn btn-secondary btn-lg`}
-                        to={`/movie?id=${(movie.id).toString()}`}
+                        to={`/movie?id=${movie.id.toString()}`}
                       >
                         {t("Show Info")}
                       </Link>
