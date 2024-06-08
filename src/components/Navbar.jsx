@@ -7,16 +7,17 @@ import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import LogoutIcon from "@mui/icons-material/Logout";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Badge from "@mui/material/Badge";
-import { selectFavorites } from "../redux/store/Slices/favoritesSlice";
-import { useSelector } from "react-redux";
+import { clearFavorite, selectFavorites } from "../redux/store/Slices/favoritesSlice";
+import { useDispatch, useSelector } from "react-redux";
 import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 const Navbar = () => {
   const [imgSource, setImgSource] = useState("assets/images/eng.svg");
   const [language, setLanguage] = useState("English");
-  const [user, setUser] = useState(localStorage.getItem("userData"));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("userData")));
   const { t, i18n } = useTranslation();
   const favorites = useSelector(selectFavorites);
+  const dispatch  = useDispatch();
   const handelChangeArabic = () => {
     setImgSource("assets/images/eg.svg");
     setLanguage("Arabic");
@@ -34,6 +35,7 @@ const Navbar = () => {
   const logout = () => {
     localStorage.clear();
     setUser(null);
+    dispatch(clearFavorite());
   };
   const StyledFavoriteIcon = styled(FavoriteIcon)(({ theme }) => ({
     "&:hover": {
@@ -152,7 +154,7 @@ const Navbar = () => {
                       <Link
                         className={`${navstyle["dropdown-item"]} dropdown-item`}
                         id={navstyle["click"]}
-                        to={"/profile-edit"}
+                        to={`/profile-edit?id=${user.id}`}
                       >
                         {t("Profile")}
                       </Link>

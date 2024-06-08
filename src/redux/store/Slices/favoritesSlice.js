@@ -17,10 +17,13 @@ const favoritesSlice = createSlice({
       );
       localStorage.setItem("favorites", JSON.stringify(state.movies));
     },
+    clearFavorite:(state,action)=>{
+      state.movies = [];
+    }
   },
 });
 
-export const { addFavorite, removeFavorite } = favoritesSlice.actions;
+export const { addFavorite, removeFavorite , clearFavorite} = favoritesSlice.actions;
 
 export const selectIsFavorite = (movieId) => (state) => {
   state.favorites.movies.some((favorite) => favorite.id === movieId);
