@@ -87,11 +87,14 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className={`${navstyle["dropdown-item"]} dropdown-item text-uppercase`}
+                      to={"/coming-soon"}
                     >
+                    
+
                       {t("Coming Soon")}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>

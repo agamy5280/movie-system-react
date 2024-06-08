@@ -1,0 +1,127 @@
+.timecol {
+    /* display: flex; */
+    gap: 10px !important;
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+  }
+  .timecol::before {
+    content: "Standard" !important;
+    display: block !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+  }
+  .timerow {
+    margin-top: 10px !important;
+    margin-bottom: 2% !important;
+  }
+  .btn {
+    color: rgb(255, 255, 255) !important;
+    background-color: #d40f7d !important;
+    height: 20px !important;
+    height: 1.5rem !important;
+    padding: 2px 10px 0 14px !important;
+    font-size: 14px !important;
+    margin-right: 10px !important;
+    border-left: 1px solid black !important;
+    position: relative !important;
+  }
+  .btn::before {
+    content: "" !important;
+    position: absolute !important;
+    left: -3px !important; /* Adjust this value according to your design */
+    top: 2px !important;
+    width: 10px !important; /* Adjust this value according to your design */
+    height: 80% !important;
+    background-color: #262729 !important;
+    border-radius: 50% !important;
+  }
+  .btn:hover {
+    background-color: #7e0a4c !important;
+  }
+  
+  h3.weekday {
+    font-size: 1.3rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+    font-family: "Effra";
+    position: relative;
+  }
+  h3.weekday::before {
+    background-color: #009ddb;
+    content: "";
+    display: block;
+    height: 3px;
+    width: 60px;
+    position: absolute;
+    top: -15px;
+  }
+  .location-bar {
+    margin-bottom: 1%;
+    margin-top: 4%;
+  }
+  .location-bar p {
+    color: rgb(150, 150, 150) !important;
+  }
+  .location-bar p.selected {
+    color: #33c5ff !important;
+  }
+  
+  .location-bar ul {
+    position: relative;
+    display: flex;
+    gap: 3%;
+    list-style: none;
+    font-size: 0.9rem;
+  }
+  .location-bar ul::before {
+    background-color: rgb(60, 60, 60);
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: -15px;
+  }
+  .location-bar ul::after {
+    background-color: rgb(60, 60, 60);
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+  }
+  .location-bar ul p:hover {
+    color: #009ddb !important;
+    cursor: pointer;
+  }
+  .movie-name {
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+    font-family: "Effra";
+    margin-top: 4%;
+    position: relative;
+  }
+  .movie-name::before {
+    background-color: #009ddb;
+    content: "";
+    display: block;
+    height: 3px;
+    width: 60px;
+    position: absolute;
+    top: -15px;
+  }
+  
+  .now-showing {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .dashed {
+    width: 60% !important;
+    border-bottom: 1px dashed #515254 !important;
+  }
+  

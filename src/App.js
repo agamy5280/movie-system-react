@@ -11,6 +11,8 @@ import MoviePage from "./components/MoviePage.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
 import FavoritesMovies from "./components/MoviesFavorites.jsx";
 import MovieSeats from "./components/MovieSeats.jsx";
+import ShowTimes from "./components/ShowTimes.jsx";
+import ComingSoon from "./components/ComingSoon.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,6 +29,10 @@ function App() {
           element: <Log_in />,
         },
         {
+          path: "/times",
+          element:<ShowTimes/>
+        },
+        {
           path: "/profile-edit",
           element: <ProfileEdit />,
         },
@@ -41,6 +47,10 @@ function App() {
         {
           path: "/seats",
           element: <MovieSeats />,
+        },
+        {
+          path: "/coming-soon",
+          element: <ComingSoon/>
         },
         {
           path: "*",
