@@ -10,7 +10,7 @@ import {
   addFavorite,
   removeFavorite,
 } from "../redux/store/Slices/favoritesSlice";
-import { hover } from "@testing-library/user-event/dist/hover";
+import { Link, useNavigate } from "react-router-dom";
 const HomePage = () => {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
@@ -63,11 +63,12 @@ const HomePage = () => {
                         <span className="fw-bold">{t("Language")}:</span>{" "}
                         {t(movie.Language)}
                       </p>
-                      <a
+                      <Link
                         className={`${homeStyle["btn"]} btn btn-secondary btn-lg`}
+                        to={`/movie?id=${(movie.id).toString()}`}
                       >
                         {t("Show Info")}
-                      </a>
+                      </Link>
                       <Button
                         size="small"
                         onClick={() => {
