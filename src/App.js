@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import HomePage from "./components/HomePage";
 import Log_in from "./components/Log_in.jsx";
-
 import "./i18n";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
