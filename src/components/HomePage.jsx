@@ -20,7 +20,8 @@ const HomePage = () => {
   const movies = useSelector((state) => state.movies.movies);
   const status = useSelector((state) => state.movies.status);
   const favorites = useSelector((state) => state.favorites.movies);
-  const userID = JSON.parse(localStorage.getItem("userData")).id;
+  const userData = localStorage.getItem("userData");
+  const userID = userData ? JSON.parse(userData).id : null;
 
   useEffect(() => {
     dispatch(getMovies());
@@ -75,23 +76,25 @@ const HomePage = () => {
                       >
                         {t("Show Info")}
                       </Link>
-                      <Button
-                        size="small"
-                        onClick={() => {
-                          if (isFavorite(movie.id)) {
-                            handleRemoveFromFavorites(movie);
-                          } else {
-                            handleAddToFavorites(movie);
-                          }
-                        }}
-                        sx={{
-                          color: isFavorite(movie.id)
-                            ? "#d40f7d !important"
-                            : "grey !important",
-                        }}
-                      >
-                        <FavoriteIcon className={homeStyle.myBtn} />
-                      </Button>
+                      {userID && (
+                        <Button
+                          size="small"
+                          onClick={() => {
+                            if (isFavorite(movie.id)) {
+                              handleRemoveFromFavorites(movie);
+                            } else {
+                              handleAddToFavorites(movie);
+                            }
+                          }}
+                          sx={{
+                            color: isFavorite(movie.id)
+                              ? "#d40f7d !important"
+                              : "grey !important",
+                          }}
+                        >
+                          <FavoriteIcon className={homeStyle.myBtn} />
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>

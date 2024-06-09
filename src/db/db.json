@@ -36,44 +36,7 @@
           "location": "City Center Almaza"
         }
       ],
-      "movie-favorites": [
-        {
-          "id": "1",
-          "title": "KINGDOM OF THE PLANET OF THE APES",
-          "movie_image": "movie-1.jpg",
-          "Genre": "Action",
-          "Running_Time": "145 min",
-          "description": "Many years after the reign of Caesar, a young ape goes on a journey that will lead him to question everything he's been taught about the past and make choices that will define a future for apes and humans alike.",
-          "Release_Date": "08 May 2024",
-          "Starring": "Kevin Durand, Dichen Lachman, Freya Allan, Wes Ball",
-          "Language": "English",
-          "classification": "+12",
-          "Subtitle": "Arabic",
-          "trailer_youtube_link": "https://www.youtube.com/embed/er3h_STlp-k",
-          "rating": "5",
-          "reviews": [
-            {
-              "userID": "1",
-              "body": "adssdadsda"
-            }
-          ],
-          "seats": "",
-          "show_times": [
-            {
-              "loaction": "City Center Almaza",
-              "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
-            },
-            {
-              "loaction": "Mall Of Egypt",
-              "times": ["1:45pm", "4:45pm"]
-            },
-            {
-              "loaction": "City Center Alexandria",
-              "times": ["1:45pm", "4:45pm", "8:30pm"]
-            }
-          ]
-        }
-      ]
+      "movie-favorites": []
     }
   ],
   "movies": [
@@ -101,15 +64,27 @@
       "show_times": [
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -132,11 +107,20 @@
       "show_times": [
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -159,19 +143,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -194,19 +194,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -229,11 +245,19 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -256,7 +280,10 @@
       "show_times": [
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         }
       ]
     },
@@ -279,19 +306,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -314,19 +357,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -349,19 +408,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -384,19 +459,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -419,19 +510,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     },
@@ -454,19 +561,35 @@
       "show_times": [
         {
           "loaction": "City Stars",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         },
         {
           "loaction": "City Center Almaza",
-          "times": ["1:45pm", "4:45pm", "8:30pm", "11:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm",
+            "11:45pm"
+          ]
         },
         {
           "loaction": "Mall Of Egypt",
-          "times": ["1:45pm", "4:45pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm"
+          ]
         },
         {
           "loaction": "City Center Alexandria",
-          "times": ["1:45pm", "4:45pm", "8:30pm"]
+          "times": [
+            "1:45pm",
+            "4:45pm",
+            "8:30pm"
+          ]
         }
       ]
     }

@@ -27,6 +27,7 @@ export const validateUser = createAsyncThunk("users/login", async (user) => {
   for (const u of response.data) {
     if (u.email === user.email && u.password === user.password) {
       localStorage.setItem("userData", JSON.stringify(u));
+      localStorage.setItem("favorites", JSON.stringify(u["movie-favorites"]));
       flag = true;
     }
   }

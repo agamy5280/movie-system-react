@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
+const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
 export const fetchMovieFavorites = createAsyncThunk(
   "favorites/fetchFavorites",
   async (id) => {
@@ -20,7 +20,7 @@ export const addMovieFavorite = createAsyncThunk(
     const res = await axios.patch(`http://localhost:8000/users/${id}`, {
       "movie-favorites": updatedFavorites,
     });
-
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     return res.data["movie-favorites"];
   }
 );
@@ -37,7 +37,7 @@ export const removeMovieFavorite = createAsyncThunk(
     const res = await axios.patch(`http://localhost:8000/users/${id}`, {
       "movie-favorites": updatedFavorites,
     });
-
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     return res.data["movie-favorites"];
   }
 );
@@ -45,7 +45,7 @@ export const removeMovieFavorite = createAsyncThunk(
 const favoritesSlice = createSlice({
   name: "favorites",
   initialState: {
-    movies: [],
+    movies: storedFavorites,
     status: "idle",
     error: null,
   },

@@ -10,17 +10,18 @@ import { fetchMovieFavorites } from "../redux/store/Slices/favoritesSlice";
 export default function FavoritesMovies() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
-  const favorites = useSelector(selectFavorites);
+  const favorites = useSelector((state) => state.favorites.movies);
   const status = useSelector((state) => state.favorites.status);
-
+  const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
   useEffect(() => {
-    dispatch(fetchMovieFavorites());
+    if (storedFavorites) {
+      dispatch(fetchMovieFavorites(storedFavorites));
+    }
   }, [dispatch]);
 
-  if (status === "loading" || !favorites) {
+  if (status === "loading") {
     return <Spinner />;
   }
-
   return (
     <div className="home p-2" dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}>
       <div className={homeStyle["now-showing"]}>
@@ -28,7 +29,7 @@ export default function FavoritesMovies() {
         <p className={`${homeStyle["dashed"]} dashed pb-2`}></p>
         <div className="container p-0">
           <div className="row">
-            {favorites?.map((movie) => {
+            {storedFavorites?.map((movie) => {
               return (
                 <div className="col-sm-3" key={movie.id}>
                   <div className={`${homeStyle["card"]} card border-0 pb-2`}>

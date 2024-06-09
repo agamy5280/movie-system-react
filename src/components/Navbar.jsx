@@ -21,7 +21,7 @@ const Navbar = () => {
     JSON.parse(localStorage.getItem("userData"))
   );
   const { t, i18n } = useTranslation();
-  const favorites = useSelector(selectFavorites);
+  const favorites = useSelector((state) => state.favorites.movies) || [];
   const dispatch = useDispatch();
   const handelChangeArabic = () => {
     setImgSource("assets/images/eg.svg");
