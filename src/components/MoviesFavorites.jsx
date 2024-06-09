@@ -1,18 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { getMovies } from "../redux/store/Slices/moviesSlice";
 import { selectFavorites } from "../redux/store/Slices/favoritesSlice";
 import Spinner from "./Spinner";
 import homeStyle from "../styles/HomePage.module.css";
 import { Link } from "react-router-dom";
+import { fetchMovieFavorites } from "../redux/store/Slices/favoritesSlice";
+
 export default function FavoritesMovies() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
-  const movies = useSelector((state) => state.movies.movies);
-  const status = useSelector((state) => state.movies.status);
-
   const favorites = useSelector(selectFavorites);
+  const status = useSelector((state) => state.favorites.status);
+
+  useEffect(() => {
+    dispatch(fetchMovieFavorites());
+  }, [dispatch]);
+
   if (status === "loading" || !favorites) {
     return <Spinner />;
   }

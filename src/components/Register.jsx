@@ -1,34 +1,37 @@
-import React from 'react';
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import LoginStyles from "../styles/Log_in.module.css"; // Import specific login styles
+import LoginStyles from "../styles/Log_in.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 const Register = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isValid },
-      } = useForm({
-        mode: "onTouched",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({
+    mode: "onTouched",
+  });
+
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const onSubmit = (data) => {
+    data["past-reservation"] = [];
+    data["movie-favorites"] = [];
+
+    axios
+      .post("http://localhost:8000/users", data)
+      .then((res) => {
+        alert("Register succesfully. Please Login first!");
+        navigate("/login");
+      })
+      .catch((err) => {
+        alert("Error Happen when registerd");
       });
+  };
 
-      const {t,i18n} = useTranslation();
-      const navigate = useNavigate();
-      const onSubmit = (data) => {
-        data["past-reservation"] = [];
-
-        axios.post("http://localhost:8000/users",data)
-        .then(res=>{
-            alert("Register succesfully. Please Login first!");
-            navigate("/login");
-        }).catch(err=>{
-            alert("Error Happen when registerd");
-        })
-      };
-    
-    return (
-        <div className={LoginStyles.container}>
+  return (
+    <div className={LoginStyles.container}>
       <Link className={LoginStyles.logoLink} to="/">
         <img
           className={LoginStyles.logo}
@@ -37,54 +40,96 @@ const Register = () => {
         />
       </Link>
 
-      <form className={LoginStyles.form} onSubmit={handleSubmit(onSubmit)} dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}>
+      <form
+        className={LoginStyles.form}
+        onSubmit={handleSubmit(onSubmit)}
+        dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}
+      >
         <div className={LoginStyles.formGroup}>
-            <label htmlFor="firstName" className={LoginStyles.label}>
-                {t("First Name")}
-            </label>
-            <input
-                type="firstName"
-                id="firstName"
-                name="firstName"
-                {...register("firstName", {
-                required: t("First Name is required"),
-                minLength: { value: 3, message: t("Minimum First Name length is 3 characters") },
-                })}
-                className={LoginStyles.input}
-            />
-            {errors.firstName && <p className={LoginStyles.errorMessage}>{errors.firstName.message}</p>}
+          <label htmlFor="firstName" className={LoginStyles.label}>
+            {t("First Name")}
+          </label>
+          <input
+            type="firstName"
+            id="firstName"
+            name="firstName"
+            {...register("firstName", {
+              required: "Please type your First Name!",
+              minLength: {
+                value: 3,
+                message: "First Name must be minimum 3 characters!",
+              },
+              pattern: {
+                value: /^[A-Za-z]+$/,
+                message: "First Name must not contain numbers!",
+              },
+            })}
+            className={LoginStyles.input}
+          />
+          {errors.firstName && (
+            <p className={LoginStyles.errorMessage}>
+              {errors.firstName.message}
+            </p>
+          )}
         </div>
         <div className={LoginStyles.formGroup}>
-            <label htmlFor="lastName" className={LoginStyles.label}>
-                {t("Last Name")}
-            </label>
-            <input
-                type="lastName"
-                id="lastName"
-                name="lastName"
-                {...register("lastName", {
-                required: t("Last Name is required"),
-                minLength: { value: 3, message: t("Minimum Last Name length is 3 characters") },
-                })}
-                className={LoginStyles.input}
-            />
-            {errors.lastName && <p className={LoginStyles.errorMessage}>{errors.lastName.message}</p>}
+          <label htmlFor="lastName" className={LoginStyles.label}>
+            {t("Last Name")}
+          </label>
+          <input
+            type="lastName"
+            id="lastName"
+            name="lastName"
+            {...register("lastName", {
+              required: "Please type your Last Name!",
+              minLength: {
+                value: 3,
+                message: "Last Name must be minimum 3 characters!",
+              },
+              pattern: {
+                value: /^[A-Za-z]+$/,
+                message: "Last Name must not contain numbers!",
+              },
+            })}
+            className={LoginStyles.input}
+          />
+          {errors.lastName && (
+            <p className={LoginStyles.errorMessage}>
+              {errors.lastName.message}
+            </p>
+          )}
         </div>
         <div className={LoginStyles.formGroup}>
-            <label htmlFor="phoneNumber" className={LoginStyles.label}>
-                {t("Phone Number")}
-            </label>
-            <input
-                type="phoneNumber"
-                id="phoneNumber"
-                name="phoneNumber"
-                {...register("phoneNumber", {
-                required: t("Phone Number is required"),
-                minLength: { value: 11, message: t("Minimum Phone Number length is 11 characters") },
-                })}
-                className={LoginStyles.input}
-            />
-            {errors.phoneNumber && <p className={LoginStyles.errorMessage}>{errors.phoneNumber.message}</p>}
+          <label htmlFor="phoneNumber" className={LoginStyles.label}>
+            {t("Phone Number")}
+          </label>
+          <input
+            type="phoneNumber"
+            id="phoneNumber"
+            name="phoneNumber"
+            {...register("phoneNumber", {
+              required: "Please type your phone number!",
+              minLength: {
+                value: 10,
+                message: "Mobile number must be at least 10 numbers!",
+              },
+              maxLength: {
+                value: 20,
+                message: "Mobile number must be at most 20 numbers!",
+              },
+              pattern: {
+                value: /^01\d+$/,
+                message:
+                  "Mobile number must start with '01' and does not contain characters.",
+              },
+            })}
+            className={LoginStyles.input}
+          />
+          {errors.phoneNumber && (
+            <p className={LoginStyles.errorMessage}>
+              {errors.phoneNumber.message}
+            </p>
+          )}
         </div>
         <div className={LoginStyles.formGroup}>
           <label htmlFor="email" className={LoginStyles.label}>
@@ -95,15 +140,17 @@ const Register = () => {
             id="email"
             name="email"
             {...register("email", {
-              required: t("Email is required"),
+              required: "Please type your email address!",
               pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: t("Invalid email format"),
+                value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                message: "Please type a valid email address!",
               },
             })}
             className={LoginStyles.input}
           />
-          {errors.email && <p className={LoginStyles.errorMessage}>{errors.email.message}</p>}
+          {errors.email && (
+            <p className={LoginStyles.errorMessage}>{errors.email.message}</p>
+          )}
         </div>
 
         <div className={LoginStyles.formGroup}>
@@ -116,19 +163,30 @@ const Register = () => {
             name="password"
             {...register("password", {
               required: t("Password is required"),
-              minLength: { value: 8, message: t("Minimum password length is 8 characters") },
+              minLength: {
+                value: 8,
+                message: t("Minimum password length is 8 characters"),
+              },
             })}
             className={LoginStyles.input}
           />
-          {errors.password && <p className={LoginStyles.errorMessage}>{errors.password.message}</p>}
+          {errors.password && (
+            <p className={LoginStyles.errorMessage}>
+              {errors.password.message}
+            </p>
+          )}
         </div>
 
-        <button type="submit" className={LoginStyles.submitButton} disabled={!isValid}>
+        <button
+          type="submit"
+          className={LoginStyles.submitButton}
+          disabled={!isValid}
+        >
           {t("Submit")}
         </button>
       </form>
     </div>
-    );
-}
+  );
+};
 
 export default Register;

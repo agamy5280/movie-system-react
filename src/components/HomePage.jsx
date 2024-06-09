@@ -7,8 +7,11 @@ import Button from "@mui/material/Button";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Spinner from "./Spinner";
 import {
-  addFavorite,
-  removeFavorite,
+  fetchMovieFavorites,
+  addMovieFavorite,
+  removeMovieFavorite,
+  selectIsFavorite,
+  selectFavorites,
 } from "../redux/store/Slices/favoritesSlice";
 import { Link, useNavigate } from "react-router-dom";
 const HomePage = () => {
@@ -17,18 +20,21 @@ const HomePage = () => {
   const movies = useSelector((state) => state.movies.movies);
   const status = useSelector((state) => state.movies.status);
   const favorites = useSelector((state) => state.favorites.movies);
+  const userID = JSON.parse(localStorage.getItem("userData")).id;
+
+  useEffect(() => {
+    dispatch(getMovies());
+  }, []);
+
   const isFavorite = (movieId) => {
     console.log(favorites);
     return favorites.some((favorite) => favorite.id === movieId);
   };
-  useEffect(() => {
-    dispatch(getMovies());
-  }, []);
   const handleAddToFavorites = (movie) => {
-    dispatch(addFavorite(movie));
+    dispatch(addMovieFavorite({ id: userID, movie }));
   };
   const handleRemoveFromFavorites = (movie) => {
-    dispatch(removeFavorite(movie));
+    dispatch(removeMovieFavorite({ id: userID, movieID: movie.id }));
   };
   if (status === "loading" || !movies) {
     return <Spinner />;
