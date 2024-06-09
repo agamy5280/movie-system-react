@@ -15,6 +15,7 @@ import ShowTimes from "./components/ShowTimes.jsx";
 import ComingSoon from "./components/ComingSoon.jsx";
 import ConfirmPage from "./components/ConfirmPage.jsx";
 import Register from "./components/Register.jsx";
+import PrevReservation from "./components/prev-reservations.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -32,7 +33,7 @@ function App() {
         },
         {
           path: "/times",
-          element:<ShowTimes/>
+          element: <ShowTimes />,
         },
         {
           path: "/profile-edit",
@@ -52,15 +53,19 @@ function App() {
         },
         {
           path: "/confirm",
-          element: <ConfirmPage/>
+          element: <ConfirmPage />,
         },
         {
           path: "/coming-soon",
-          element: <ComingSoon/>
+          element: <ComingSoon />,
         },
         {
-          path:"/register",
-          element: <Register/>
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "/prev-reservations",
+          element: <PrevReservation />,
         },
         {
           path: "*",

@@ -37,11 +37,19 @@ export const validateUser = createAsyncThunk("users/login", async (user) => {
     alert("wrong password or email");
   }
 });
-
+export const fetchPrevReservations = createAsyncThunk(
+  "users/fetchPrevReservations",
+  async (id) => {
+    const res = await axios.get(`http://localhost:8000/users/${id}`);
+    const result = res.data["past-reservation"];
+    return result;
+  }
+);
 const userSlice = createSlice({
   name: "users",
   initialState: {
     users: [],
+    reservations: [],
     user: null,
     status: "idle",
     error: null,
@@ -79,7 +87,7 @@ const userSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       })
-      // ----------------------- vlidate User -------------------- //
+      // ----------------------- Validate User -------------------- //
       .addCase(validateUser.pending, (state) => {
         state.status = "loading";
       })
@@ -87,6 +95,18 @@ const userSlice = createSlice({
         state.status = "succeeded";
       })
       .addCase(validateUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      // ----------------------- fetch Prev Reservations -------------------- //
+      .addCase(fetchPrevReservations.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchPrevReservations.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.reservations = action.payload;
+      })
+      .addCase(fetchPrevReservations.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });
