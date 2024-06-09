@@ -37,6 +37,26 @@
         }
       ],
       "movie-favorites": []
+    },
+    {
+      "id": "bc9b",
+      "firstName": "Mazen",
+      "lastName": "Eldessouky",
+      "phoneNumber": "01116971883",
+      "email": "mazen@gmail.com",
+      "password": "123456789",
+      "past-reservation": [
+        {
+          "id": "1",
+          "title": "KINGDOM OF THE PLANET OF THE APES",
+          "time": "4:45pm",
+          "seats": "1D,1E",
+          "price": "200",
+          "image": "movie-1.jpg",
+          "location": "City Center Almaza"
+        }
+      ],
+      "movie-favorites": []
     }
   ],
   "movies": [
