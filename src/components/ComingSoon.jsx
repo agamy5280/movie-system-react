@@ -4,6 +4,7 @@ import { getMovies } from "../redux/store/Slices/moviesSlice";
 import DOMPurify from 'dompurify';
 import soonStyle from "../styles/ComingSoon.module.css";
 import Spinner from './Spinner';
+import { useTranslation } from 'react-i18next';
 
 export const getSafeUrl = (url) => {
   return DOMPurify.sanitize(url, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
@@ -15,7 +16,7 @@ const ComingSoon = () => {
   const movies = useSelector((state) => state.movies.movies);
   const status = useSelector((state) => state.movies.status);
   const error = useSelector((state) => state.movies.error);
-
+  const {t,i18n} = useTranslation();
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
@@ -33,8 +34,8 @@ const ComingSoon = () => {
   
   return (
     <div className={soonStyle["now-showing"]}>
-      <div className="row">
-        <h1 className={soonStyle["what"]}>Coming Soon</h1>
+      <div className="row" dir={i18n.language==="en"? "ltr" : "rtl"}>
+        <h1 className={soonStyle["what"]}>{t("Coming Soon")}</h1>
         <p className={`${soonStyle["dashed"]} pb-2`} ></p>
       </div>
 
@@ -85,23 +86,23 @@ const ComingSoon = () => {
                 <div className={soonStyle["sec-img"]}>
                   <img src={`assets/images/${movie.movie_image}`} alt="" />
                 </div>
-                <div className={soonStyle["sec-details"]}>
+                <div className={soonStyle["sec-details"]} dir={i18n.language==="en"? "ltr" : "rtl"}>
                   <div className={soonStyle["title"]}>
                     <h3>{movie.title}</h3>
                   </div>
                   <div className={soonStyle["info"]}>
                     <p>
-                      Release Date: <span>{movie.Release_Date}</span>
+                      {t("Release Date")}: <span>{t(movie.Release_Date)}</span>
                     </p>
                     <p>
-                      Starring: <span>{movie.Starring}</span>
+                      {t("Starring")}: <span>{movie.Starring}</span>
                     </p>
                     <p>
-                      Language: <span>{movie.Language}</span>
+                      {t("Language")}: <span>{t(movie.Language)}</span>
                     </p>
                   </div>
                   <div className="">
-                    <p className={soonStyle["disc"]}>{`${movie.description.slice(0, 100)} . . . .`}</p>
+                    <p className={soonStyle["disc"]}>{`${t(movie.description).slice(0, 100)} . . . .`}</p>
                   </div>
                 </div>
               </div>

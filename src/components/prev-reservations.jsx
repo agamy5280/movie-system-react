@@ -29,9 +29,9 @@ export default function PrevReservation() {
   }
 
   return (
-    <div className={styles["now-showing"]}>
-      <div className="row">
-        <h1 className={styles.what}>Past Reservation</h1>
+    <div className={styles["now-showing"]} >
+      <div className="row" dir={i18n.language==="en"? "ltr" : "rtl"}>
+        <h1 className={styles.what}>{t("Last Reservations")}</h1>
         <p className={`${styles.dashed} pb-2`}></p>
       </div>
       {reservations?.map((reservation) => {
@@ -40,22 +40,22 @@ export default function PrevReservation() {
             <div className={styles["sec-img"]}>
               <img src={`assets/images/${reservation.image}`} alt="" />
             </div>
-            <div className={styles["sec-details"]}>
+            <div className={styles["sec-details"]} dir={i18n.language==="en"? "ltr" : "rtl"} style={{marginRight:20}}>
               <div className={styles.title}>
-                <h3>Movie Name: {reservation.title}</h3>
+                <h3>{t("Movie Name")}: {reservation.title} </h3>
               </div>
               <div className={styles.info}>
                 <p>
-                  Time: <span>{reservation.time}</span>
+                  {t("Time")}: <span>{reservation.time}</span>
                 </p>
                 <p>
-                  Location: <span>{reservation.location}</span>
+                  {t("Location")}: <span>{reservation.location}</span>
                 </p>
                 <p>
-                  Seats: <span>{reservation.seats}</span>
+                  {t("Seats")}: <span>{reservation.seats}</span>
                 </p>
                 <p>
-                  Price: <span>{reservation.price} EGP</span>
+                  {t("Price")}: <span>{reservation.price} {t("EGP")}</span>
                 </p>
               </div>
             </div>
