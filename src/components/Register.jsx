@@ -52,7 +52,7 @@ const Register = () => {
                 })}
                 className={LoginStyles.input}
             />
-            {errors.password && <p className={LoginStyles.errorMessage}>{errors.password.message}</p>}
+            {errors.firstName && <p className={LoginStyles.errorMessage}>{errors.firstName.message}</p>}
         </div>
         <div className={LoginStyles.formGroup}>
             <label htmlFor="lastName" className={LoginStyles.label}>
@@ -68,7 +68,7 @@ const Register = () => {
                 })}
                 className={LoginStyles.input}
             />
-            {errors.password && <p className={LoginStyles.errorMessage}>{errors.password.message}</p>}
+            {errors.lastName && <p className={LoginStyles.errorMessage}>{errors.lastName.message}</p>}
         </div>
         <div className={LoginStyles.formGroup}>
             <label htmlFor="phoneNumber" className={LoginStyles.label}>
@@ -84,7 +84,7 @@ const Register = () => {
                 })}
                 className={LoginStyles.input}
             />
-            {errors.password && <p className={LoginStyles.errorMessage}>{errors.password.message}</p>}
+            {errors.phoneNumber && <p className={LoginStyles.errorMessage}>{errors.phoneNumber.message}</p>}
         </div>
         <div className={LoginStyles.formGroup}>
           <label htmlFor="email" className={LoginStyles.label}>
