@@ -72,6 +72,7 @@ export default function ShowTimes() {
           </div>
         ))}
       </div>}
+      
     </>
   );
 }

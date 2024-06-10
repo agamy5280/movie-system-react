@@ -6,6 +6,7 @@ import styles from "../styles/MoviePage.module.css";
 import Spinner from "./Spinner";
 import { getMovieByID } from "../redux/store/Slices/moviesSlice";
 import { useNavigate } from "react-router-dom";
+import Reviews from "./Reviews";
 
 export default function MoviePage() {
   const { t, i18n } = useTranslation();
@@ -102,6 +103,7 @@ export default function MoviePage() {
           value={t("View Showtimes")}
         />
       </div>
+      <Reviews movie = {movie}></Reviews>
     </div>
   );
 }
