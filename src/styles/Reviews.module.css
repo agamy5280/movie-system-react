@@ -1,0 +1,116 @@
+/* Container for the reviews section */
+:root {
+    --dashed-color: #515254;
+    --color-heading-highlight: #009ddb;
+    --btn-color: #d40f7d;
+  }
+.title-header {
+    text-transform: uppercase;
+    font-family: "Effra";
+    font-weight: 700;
+    font-size: 28px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+  }
+  
+  .title-header::before {
+    background-color: var(--color-heading-highlight);
+    content: "";
+    display: block;
+    height: 3px;
+    margin-bottom: 10px;
+    width: 60px;
+  }
+
+.reviewsContainer {
+    /* margin: 20px; */
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+  }
+  
+  /* Individual review item */
+  .reviewItem {
+    margin: 0;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-left: 5px solid #bc0f71;
+    height: 100px;
+  }
+  
+  /* Username styling */
+  .username {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff; /* White text */
+    margin-bottom: 5px;
+  }
+  
+  /* Rating styling */
+  .rating {
+    color: #ff9800; /* Keep the rating color the same */
+    margin-bottom: 20px;
+  }
+  
+  /* Comment styling */
+  .comment {
+    font-style: italic;
+    color: #ccc; /* Lighter gray for comments */
+    font-size: 1.3rem;
+  }
+  
+  /* Form styling */
+  .reviewForm {
+    margin-left: 25px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  /* Input fields styling */
+  .reviewForm label {
+    margin-bottom: 10px;
+    color: #fff; /* White text for labels */
+  }
+  
+  /* Textarea styling */
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #444; /* Dark border */
+    border-radius: 4px;
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    resize: vertical;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* Submit button styling */
+  .submitButton {
+    border-color: #bc0f71;
+    background-color: var(--btn-color) ;
+    color: white;
+    text-align: center;
+    height: 2.5rem !important;
+    width: 8rem !important;
+    border-radius: 10px;
+    padding: 5px 10px 0 10px;
+    font-size: 14px;
+    transition: 1s;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .submitButton:hover {
+    background-color: #770846;
+  }
+  li{
+    list-style-type: none;
+  }
+  
