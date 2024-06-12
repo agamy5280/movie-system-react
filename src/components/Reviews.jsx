@@ -4,8 +4,9 @@ import axios from "axios";
 import { getUserByID } from "../redux/store/Slices/usersSlice";
 import styles from "../styles/Reviews.module.css";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
-
+import { useLocation, useNavigate } from "react-router-dom";
 const Reviews = ({ movie }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const reviews = movie.reviews;
   const [newReview, setNewReview] = useState({
@@ -32,28 +33,25 @@ const Reviews = ({ movie }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userId == null){
+    if (userId == null) {
       alert("you must log in first!");
-     
-      }
-      else{
+      navigate("/login");
+    } else {
+      const reviewToSubmit = {
+        ...newReview,
+        username: user.firstName,
+      };
 
-        const reviewToSubmit = {
-          ...newReview,
-          username: user.firstName,
-        };
-    
-        const updatedMovie = {
-          ...movie,
-          reviews: [...movie.reviews, reviewToSubmit],
-        };
-    
-        addReview(movie.id, updatedMovie);
-    
-        // Clear the form
-        setNewReview({ rating: "", comment: "", username: "" });
-      }
+      const updatedMovie = {
+        ...movie,
+        reviews: [...movie.reviews, reviewToSubmit],
+      };
 
+      addReview(movie.id, updatedMovie);
+
+      // Clear the form
+      setNewReview({ rating: "", comment: "", username: "" });
+    }
 
     // Set username in the new review
   };

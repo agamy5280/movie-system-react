@@ -25,7 +25,13 @@ export default function MovieSeats() {
   const error = useSelector((state) => state.movies.error);
 
   const navigate = useNavigate();
-
+  useEffect(() => {
+    const userData = localStorage.getItem("userData");
+    if (!userData) {
+      alert("You must log in first!");
+      navigate("/login");
+    }
+  }, [navigate]);
   useEffect(() => {
     if (id) {
       dispatch(getMovieByID(id));
@@ -94,7 +100,7 @@ export default function MovieSeats() {
     const params = new URLSearchParams({
       id: movie.id,
       title: movie.title,
-      image:movie.movie_image,
+      image: movie.movie_image,
       time: movieTime,
       location: movieLocation,
       seats: selectedSeats,

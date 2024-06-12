@@ -57,6 +57,114 @@
         }
       ],
       "movie-favorites": []
+    },
+    {
+      "id": "d769",
+      "firstName": "TESTESTTESTEST",
+      "lastName": "TESTEST",
+      "phoneNumber": "01223715457",
+      "email": "test@hotmail.com",
+      "password": "123456789",
+      "past-reservation": [
+        {
+          "id": "1",
+          "title": "KINGDOM OF THE PLANET OF THE APES",
+          "time": "8:30pm",
+          "seats": "5D,5E",
+          "price": "200",
+          "image": "movie-1.jpg",
+          "location": "City Center Alexandria"
+        }
+      ],
+      "movie-favorites": [
+        {
+          "id": "2",
+          "title": "AL SERB",
+          "movie_image": "movie-2.jpg",
+          "Genre": "Action",
+          "Running_Time": "100 min",
+          "description": "El Serb is a captivating thriller inspired by real events movie, tracing the journey of a team of Egyptian heroes as they battle terrorist organizations. Following a devastating tragedy, they undertake a mission within enemy territory, encountering resistance. With high-powered combat sequences and impressive production, the film showcases their bravery and determination to protect their homeland and uphold justice.",
+          "Release_Date": "01 May 2024",
+          "Starring": "Mohamed Mamdouh, Ahmed El Sakka, Sherif Mounir, Mostafa Fahmi",
+          "Language": "Arabic",
+          "classification": "G",
+          "Subtitle": "No subtitle",
+          "trailer_youtube_link": "https://www.youtube.com/embed/jg2M4yStW3M",
+          "rating": "5",
+          "reviews": [],
+          "seats": "",
+          "show_times": [
+            {
+              "loaction": "City Center Almaza",
+              "times": [
+                "1:45pm",
+                "4:45pm",
+                "8:30pm",
+                "11:45pm"
+              ]
+            },
+            {
+              "loaction": "City Center Alexandria",
+              "times": [
+                "1:45pm",
+                "4:45pm",
+                "8:30pm"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "title": "LAHAZAT LAZEEZA",
+          "movie_image": "movie-4.jpg",
+          "Genre": "Comedy",
+          "Running_Time": "125 min",
+          "description": "Saleh Hesham Maged and Doria Hannah Al Zahed are a couple who live an unhappy life. They have a mischievous son who always causes them problems, and the parents always blame each other for these problems and shirk responsibility. One day, after a big quarrel between them, Doria leaves the house and Saleh is left alone. Saleh discovers a strange illuminated portal in the garage room of his house. Saleh crosses the portal to find a parallel world in which there is a better version of his home, his family, and his life. The events take place within a comedic framework with the participation of Bayoumi Fouad and Mohamed Tharwat.",
+          "Release_Date": "10 April 2024",
+          "Starring": "Hesham Maged, Hannah El Zahed",
+          "Language": "Arabic",
+          "classification": "G",
+          "Subtitle": "English",
+          "trailer_youtube_link": "https://www.youtube.com/embed/I6XDq5zOkok",
+          "rating": "5",
+          "reviews": [],
+          "seats": "",
+          "show_times": [
+            {
+              "loaction": "City Stars",
+              "times": [
+                "1:45pm",
+                "4:45pm",
+                "8:30pm"
+              ]
+            },
+            {
+              "loaction": "City Center Almaza",
+              "times": [
+                "1:45pm",
+                "4:45pm",
+                "8:30pm",
+                "11:45pm"
+              ]
+            },
+            {
+              "loaction": "Mall Of Egypt",
+              "times": [
+                "1:45pm",
+                "4:45pm"
+              ]
+            },
+            {
+              "loaction": "City Center Alexandria",
+              "times": [
+                "1:45pm",
+                "4:45pm",
+                "8:30pm"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "movies": [
@@ -138,7 +246,13 @@
       "Subtitle": "No subtitle",
       "trailer_youtube_link": "https://www.youtube.com/embed/jg2M4yStW3M",
       "rating": "5",
-      "reviews": [],
+      "reviews": [
+        {
+          "rating": "5",
+          "comment": "GREAT!",
+          "username": "TESTESTTESTEST"
+        }
+      ],
       "seats": "",
       "show_times": [
         {
