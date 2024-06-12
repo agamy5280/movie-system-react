@@ -84,6 +84,11 @@
           "rating": "1",
           "comment": "sdfdsfsdf",
           "username": "TEST"
+        },
+        {
+          "rating": "5",
+          "comment": "GREAT!",
+          "username": "TEST"
         }
       ],
       "seats": "",

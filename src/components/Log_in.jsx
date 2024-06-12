@@ -2,8 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "../styles/Profile.module.css"; // Import base styles
-import LoginStyles from "../styles/Log_in.module.css"; // Import specific login styles
+import styles from "../styles/Profile.module.css";
+import LoginStyles from "../styles/Log_in.module.css";
 import Spinner from "./Spinner";
 import { validateUser } from "../redux/store/Slices/usersSlice";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const LogIn = () => {
   } = useForm({
     mode: "onTouched",
   });
-  
+
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
@@ -35,7 +35,11 @@ const LogIn = () => {
         />
       </Link>
 
-      <form className={LoginStyles.form} onSubmit={handleSubmit(onSubmit)} dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}>
+      <form
+        className={LoginStyles.form}
+        onSubmit={handleSubmit(onSubmit)}
+        dir={`${i18n.language === "en" ? "ltr" : "rtl"}`}
+      >
         <div className={LoginStyles.formGroup}>
           <label htmlFor="email" className={LoginStyles.label}>
             {t("Email")}
@@ -53,7 +57,9 @@ const LogIn = () => {
             })}
             className={LoginStyles.input}
           />
-          {errors.email && <p className={LoginStyles.errorMessage}>{errors.email.message}</p>}
+          {errors.email && (
+            <p className={LoginStyles.errorMessage}>{errors.email.message}</p>
+          )}
         </div>
 
         <div className={LoginStyles.formGroup}>
@@ -66,14 +72,25 @@ const LogIn = () => {
             name="password"
             {...register("password", {
               required: t("Password is required"),
-              minLength: { value: 8, message: t("Minimum password length is 8 characters") },
+              minLength: {
+                value: 8,
+                message: t("Minimum password length is 8 characters"),
+              },
             })}
             className={LoginStyles.input}
           />
-          {errors.password && <p className={LoginStyles.errorMessage}>{errors.password.message}</p>}
+          {errors.password && (
+            <p className={LoginStyles.errorMessage}>
+              {errors.password.message}
+            </p>
+          )}
         </div>
 
-        <button type="submit" className={LoginStyles.submitButton} disabled={!isValid}>
+        <button
+          type="submit"
+          className={LoginStyles.submitButton}
+          disabled={!isValid}
+        >
           {t("Submit")}
         </button>
       </form>
