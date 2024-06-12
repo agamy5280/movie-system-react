@@ -89,6 +89,11 @@
           "rating": "5",
           "comment": "GREAT!",
           "username": "TEST"
+        },
+        {
+          "rating": "3",
+          "comment": "test",
+          "username": "TEST"
         }
       ],
       "seats": "",

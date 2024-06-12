@@ -32,22 +32,30 @@ const Reviews = ({ movie }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (userId == null){
+      alert("you must log in first!");
+     
+      }
+      else{
+
+        const reviewToSubmit = {
+          ...newReview,
+          username: user.firstName,
+        };
+    
+        const updatedMovie = {
+          ...movie,
+          reviews: [...movie.reviews, reviewToSubmit],
+        };
+    
+        addReview(movie.id, updatedMovie);
+    
+        // Clear the form
+        setNewReview({ rating: "", comment: "", username: "" });
+      }
+
 
     // Set username in the new review
-    const reviewToSubmit = {
-      ...newReview,
-      username: user.firstName,
-    };
-
-    const updatedMovie = {
-      ...movie,
-      reviews: [...movie.reviews, reviewToSubmit],
-    };
-
-    addReview(movie.id, updatedMovie);
-
-    // Clear the form
-    setNewReview({ rating: "", comment: "", username: "" });
   };
 
   useEffect(() => {
